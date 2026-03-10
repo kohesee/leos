@@ -1,0 +1,6 @@
+taskID,priority,targetAisle,memorySize,processTime
+101,1,4,50,10
+102,5,2,20,30
+103,2,7,35,15
+104,1,1,45,12
+105,3,5,25,20
