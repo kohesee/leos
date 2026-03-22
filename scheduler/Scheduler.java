@@ -1,8 +1,11 @@
+package scheduler;
+
 // Scheduler.java
 // Ready Queue and Round Robin
 
 import java.util.LinkedList;
 import java.util.List;
+import shared.Task;
 
 public class Scheduler {
     private final LinkedList<Task> readyQueue;

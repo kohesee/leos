@@ -1,18 +1,22 @@
+package shared;
+
 public class Task {
     private int taskID;
     private int priority;
     private String state;
     private int targetAisle;
     private int memorySize;
+    private int processTime;
     private long creationTime;
     private long startTime;
     private long endTime;
 
-    public Task(int taskID, int priority, int targetAisle, int memorySize) {
+    public Task(int taskID, int priority, int targetAisle, int memorySize, int processTime) {
         this.taskID = taskID;
         this.priority = priority;
         this.targetAisle = targetAisle;
         this.memorySize = memorySize;
+        this.processTime = processTime;
         this.state = "NEW";
         this.creationTime = System.currentTimeMillis();
     }
@@ -39,6 +43,10 @@ public class Task {
 
     public int getMemorySize() {
         return memorySize;
+    }
+
+    public int getProcessTime() {
+        return processTime;
     }
 
     public long getCreationTime() {
