@@ -10,6 +10,13 @@ public class Task {
     private long creationTime;
     private long startTime;
     private long endTime;
+    private int allocatedMemory;
+    private int memoryAddress;
+    private long lastAccessTime;
+    private String waitingReason;
+    private int aisleAccessCount;
+    
+    private static final String[] VALID_STATES = {"NEW", "READY", "RUNNING", "WAITING", "TERMINATED"};
 
     public Task(int taskID, int priority, int targetAisle, int memorySize, int processTime) {
         this.taskID = taskID;
@@ -19,6 +26,11 @@ public class Task {
         this.processTime = processTime;
         this.state = "NEW";
         this.creationTime = System.currentTimeMillis();
+        this.lastAccessTime = this.creationTime;
+        this.allocatedMemory = 0;
+        this.memoryAddress = -1;
+        this.waitingReason = "";
+        this.aisleAccessCount = 0;
     }
 
     public int getTaskID() {
@@ -34,7 +46,18 @@ public class Task {
     }
 
     public void setState(String state) {
-        this.state = state;
+        if (isValidState(state)) {
+            this.state = state;
+        } else {
+            throw new IllegalArgumentException("Invalid state: " + state);
+        }
+    }
+    
+    private static boolean isValidState(String state) {
+        for (String valid : VALID_STATES) {
+            if (valid.equals(state)) return true;
+        }
+        return false;
     }
 
     public int getTargetAisle() {
@@ -76,6 +99,46 @@ public class Task {
     public long getTurnaroundTime() {
         return endTime - creationTime;
     }
+    
+    public int getAllocatedMemory() {
+        return allocatedMemory;
+    }
+    
+    public void setAllocatedMemory(int allocatedMemory) {
+        this.allocatedMemory = allocatedMemory;
+    }
+    
+    public int getMemoryAddress() {
+        return memoryAddress;
+    }
+    
+    public void setMemoryAddress(int memoryAddress) {
+        this.memoryAddress = memoryAddress;
+    }
+    
+    public long getLastAccessTime() {
+        return lastAccessTime;
+    }
+    
+    public void updateLastAccessTime() {
+        this.lastAccessTime = System.currentTimeMillis();
+    }
+    
+    public String getWaitingReason() {
+        return waitingReason;
+    }
+    
+    public void setWaitingReason(String reason) {
+        this.waitingReason = reason;
+    }
+    
+    public int getAisleAccessCount() {
+        return aisleAccessCount;
+    }
+    
+    public void incrementAisleAccessCount() {
+        this.aisleAccessCount++;
+    }
 
     @Override
     public String toString() {
@@ -85,6 +148,8 @@ public class Task {
                 ", state='" + state + '\'' +
                 ", targetAisle=" + targetAisle +
                 ", memorySize=" + memorySize +
+                ", allocated=" + allocatedMemory +
+                ", addr=" + memoryAddress +
                 '}';
     }
 }
