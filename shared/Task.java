@@ -37,6 +37,10 @@ public class Task {
         return taskID;
     }
 
+    public int getTaskId() {
+        return taskID;
+    }
+
     public int getPriority() {
         return priority;
     }

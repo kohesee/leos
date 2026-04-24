@@ -1,0 +1,221 @@
+????????????????????????????????????????????????????????????
+?          OPERATING SYSTEM SIMULATION - PHASE 1            ?
+????????????????????????????????????????????????????????????
+
+[0ms] [ORCHESTRATOR] [INIT] Initializing all OS components...
+[46ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+[47ms] [ORCHESTRATOR] [START] Starting OS simulation with CSV: tasks.csv
+[38ms] KERNEL: Task 101 created (NEW)
+[43ms] KERNEL: Task 101 validated (READY)
+[43ms] KERNEL: Task 102 created (NEW)
+[43ms] KERNEL: Task 102 validated (READY)
+[43ms] KERNEL: Task 103 created (NEW)
+[44ms] KERNEL: Task 103 validated (READY)
+[44ms] KERNEL: Task 104 created (NEW)
+[44ms] KERNEL: Task 104 validated (READY)
+[44ms] KERNEL: Task 105 created (NEW)
+[44ms] KERNEL: Task 105 validated (READY)
+[69ms] [ORCHESTRATOR] [LOAD] Loaded 5 tasks from CSV
+[69ms] [ORCHESTRATOR] [SETUP] Setting up Task 101
+Task 101 allocated 50 units at Floor Index 0-49 (Best Fit)
+[75ms] [MEMORY] [ALLOCATE] Task 101 allocated at 0
+[75ms] [SCHEDULER] [QUEUE] Task 101 added to Ready Queue
+[75ms] [ORCHESTRATOR] [SETUP] Setting up Task 102
+Task 102 allocated 20 units at Floor Index 50-69 (Best Fit)
+[75ms] [MEMORY] [ALLOCATE] Task 102 allocated at 50
+[75ms] [SCHEDULER] [QUEUE] Task 102 added to Ready Queue
+[76ms] [ORCHESTRATOR] [SETUP] Setting up Task 103
+Task 103 allocated 35 units at Floor Index 70-104 (Best Fit)
+[76ms] [MEMORY] [ALLOCATE] Task 103 allocated at 70
+[76ms] [SCHEDULER] [QUEUE] Task 103 added to Ready Queue
+[76ms] [ORCHESTRATOR] [SETUP] Setting up Task 104
+Task 104 allocated 45 units at Floor Index 105-149 (Best Fit)
+[76ms] [MEMORY] [ALLOCATE] Task 104 allocated at 105
+[76ms] [SCHEDULER] [QUEUE] Task 104 added to Ready Queue
+[76ms] [ORCHESTRATOR] [SETUP] Setting up Task 105
+Task 105 allocated 25 units at Floor Index 150-174 (Best Fit)
+[76ms] [MEMORY] [ALLOCATE] Task 105 allocated at 150
+[76ms] [SCHEDULER] [QUEUE] Task 105 added to Ready Queue
+[76ms] [ORCHESTRATOR] [STATUS] Initial setup complete. Ready to execute tasks.
+[152ms] SCHEDULER: Task 101 selected (Priority Scheduling)
+[177ms] [ORCHESTRATOR] [EXECUTE] Starting execution of Task 101
+[153ms] SCHEDULER: Context Switch - Loading state of Task 101
+[178ms] [ORCHESTRATOR] [AISLE_REQUEST] Task 101 requesting Aisle 4
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 101 on Aisle 4...
+[1ms] CONCURRENCY: SAFE STATE — Aisle 4 is available for Task 101
+[0ms] CONCURRENCY: Task 101 requesting Aisle 4
+[1ms] CONCURRENCY: Aisle 4 Semaphore ACQUIRED by Task 101
+[180ms] [CONCURRENCY] [AISLE_ACQUIRED] Task 101 acquired Aisle 4
+[183ms] [DISK] [PATH_SELECTED] Task 101 using SSTF algorithm
+[0ms] DISK: Task 101 executing path: [30, 40, 60]
+[1ms] DISK: Robot moving from shelf 0 to 30 (distance: 30)
+[2ms] DISK: Robot picked item at shelf 30 (pick cost: 1ms)
+[3ms] DISK: Robot moving from shelf 30 to 40 (distance: 10)
+[4ms] DISK: Robot picked item at shelf 40 (pick cost: 1ms)
+[5ms] DISK: Robot moving from shelf 40 to 60 (distance: 20)
+[6ms] DISK: Robot picked item at shelf 60 (pick cost: 1ms)
+DISK: Task 101 -> distance=60, time=12ms, directionChanges=1
+[201ms] [ORCHESTRATOR] [RUNNING] Task 101 executing for 10ms
+[2ms] CONCURRENCY: Aisle 4 Semaphore RELEASED by Task 101
+[214ms] [CONCURRENCY] [AISLE_RELEASED] Task 101 released Aisle 4
+Memory for Task 101 deallocated (50 units freed)
+[215ms] [MEMORY] [DEALLOCATE] Memory deallocated for Task 101
+[191ms] KERNEL: Task 101 terminated (TERMINATED)
+Task 101 Stats -> Wait: 119ms, Turnaround: 156ms
+[198ms] SCHEDULER: Task 101 Stats -> Wait: 119ms, Turnaround: 156ms
+[224ms] [ORCHESTRATOR] [COMPLETE] Task 101 execution completed
+[199ms] SCHEDULER: Task 104 selected (Priority Scheduling)
+[224ms] [ORCHESTRATOR] [EXECUTE] Starting execution of Task 104
+[200ms] SCHEDULER: Context Switch - Saving state of Task 101
+[200ms] SCHEDULER: Context Switch - Loading state of Task 104
+[225ms] [ORCHESTRATOR] [AISLE_REQUEST] Task 104 requesting Aisle 1
+[2ms] CONCURRENCY: Banker's Algorithm checking for Task 104 on Aisle 1...
+[3ms] CONCURRENCY: SAFE STATE — Aisle 1 is available for Task 104
+[0ms] CONCURRENCY: Task 104 requesting Aisle 1
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 104
+[226ms] [CONCURRENCY] [AISLE_ACQUIRED] Task 104 acquired Aisle 1
+[226ms] [DISK] [PATH_SELECTED] Task 104 using SSTF algorithm
+[7ms] DISK: Task 104 executing path: [30, 10, 0]
+[8ms] DISK: Robot moving from shelf 60 to 30 (distance: 30)
+[9ms] DISK: Robot picked item at shelf 30 (pick cost: 1ms)
+[10ms] DISK: Robot moving from shelf 30 to 10 (distance: 20)
+[11ms] DISK: Robot picked item at shelf 10 (pick cost: 1ms)
+[12ms] DISK: Robot moving from shelf 10 to 0 (distance: 10)
+[13ms] DISK: Robot picked item at shelf 0 (pick cost: 1ms)
+DISK: Task 104 -> distance=60, time=12ms, directionChanges=1
+[226ms] [ORCHESTRATOR] [RUNNING] Task 104 executing for 12ms
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 104
+[240ms] [CONCURRENCY] [AISLE_RELEASED] Task 104 released Aisle 1
+Memory for Task 104 deallocated (45 units freed)
+[240ms] [MEMORY] [DEALLOCATE] Memory deallocated for Task 104
+[217ms] KERNEL: Task 104 terminated (TERMINATED)
+Task 104 Stats -> Wait: 157ms, Turnaround: 173ms
+[216ms] SCHEDULER: Task 104 Stats -> Wait: 157ms, Turnaround: 173ms
+[241ms] [ORCHESTRATOR] [COMPLETE] Task 104 execution completed
+[216ms] SCHEDULER: Task 103 selected (Priority Scheduling)
+[241ms] [ORCHESTRATOR] [EXECUTE] Starting execution of Task 103
+[216ms] SCHEDULER: Context Switch - Saving state of Task 104
+[216ms] SCHEDULER: Context Switch - Loading state of Task 103
+[241ms] [ORCHESTRATOR] [AISLE_REQUEST] Task 103 requesting Aisle 7
+[4ms] CONCURRENCY: Banker's Algorithm checking for Task 103 on Aisle 7...
+[5ms] CONCURRENCY: SAFE STATE — Aisle 7 is available for Task 103
+[0ms] CONCURRENCY: Task 103 requesting Aisle 7
+[1ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 103
+[242ms] [CONCURRENCY] [AISLE_ACQUIRED] Task 103 acquired Aisle 7
+[242ms] [DISK] [PATH_SELECTED] Task 103 using SSTF algorithm
+[14ms] DISK: Task 103 executing path: [60, 70, 90]
+[15ms] DISK: Robot moving from shelf 0 to 60 (distance: 60)
+[16ms] DISK: Robot picked item at shelf 60 (pick cost: 1ms)
+[17ms] DISK: Robot moving from shelf 60 to 70 (distance: 10)
+[18ms] DISK: Robot picked item at shelf 70 (pick cost: 1ms)
+[19ms] DISK: Robot moving from shelf 70 to 90 (distance: 20)
+[20ms] DISK: Robot picked item at shelf 90 (pick cost: 1ms)
+DISK: Task 103 -> distance=60, time=12ms, directionChanges=1
+[243ms] [ORCHESTRATOR] [RUNNING] Task 103 executing for 15ms
+[2ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 103
+[258ms] [CONCURRENCY] [AISLE_RELEASED] Task 103 released Aisle 7
+Memory for Task 103 deallocated (35 units freed)
+[258ms] [MEMORY] [DEALLOCATE] Memory deallocated for Task 103
+[235ms] KERNEL: Task 103 terminated (TERMINATED)
+Task 103 Stats -> Wait: 174ms, Turnaround: 192ms
+[235ms] SCHEDULER: Task 103 Stats -> Wait: 174ms, Turnaround: 192ms
+[260ms] [ORCHESTRATOR] [COMPLETE] Task 103 execution completed
+[235ms] SCHEDULER: Task 105 selected (Round Robin)
+[260ms] [ORCHESTRATOR] [EXECUTE] Starting execution of Task 105
+[235ms] SCHEDULER: Context Switch - Saving state of Task 103
+[235ms] SCHEDULER: Context Switch - Loading state of Task 105
+[260ms] [ORCHESTRATOR] [AISLE_REQUEST] Task 105 requesting Aisle 5
+[6ms] CONCURRENCY: Banker's Algorithm checking for Task 105 on Aisle 5...
+[7ms] CONCURRENCY: SAFE STATE — Aisle 5 is available for Task 105
+[0ms] CONCURRENCY: Task 105 requesting Aisle 5
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 105
+[261ms] [CONCURRENCY] [AISLE_ACQUIRED] Task 105 acquired Aisle 5
+[261ms] [DISK] [PATH_SELECTED] Task 105 using SSTF algorithm
+[21ms] DISK: Task 105 executing path: [70, 50, 40]
+[22ms] DISK: Robot moving from shelf 90 to 70 (distance: 20)
+[23ms] DISK: Robot picked item at shelf 70 (pick cost: 1ms)
+[24ms] DISK: Robot moving from shelf 70 to 50 (distance: 20)
+[25ms] DISK: Robot picked item at shelf 50 (pick cost: 1ms)
+[26ms] DISK: Robot moving from shelf 50 to 40 (distance: 10)
+[27ms] DISK: Robot picked item at shelf 40 (pick cost: 1ms)
+DISK: Task 105 -> distance=60, time=12ms, directionChanges=1
+[262ms] [ORCHESTRATOR] [RUNNING] Task 105 executing for 20ms
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 105
+[283ms] [CONCURRENCY] [AISLE_RELEASED] Task 105 released Aisle 5
+Memory for Task 105 deallocated (25 units freed)
+[283ms] [MEMORY] [DEALLOCATE] Memory deallocated for Task 105
+[259ms] KERNEL: Task 105 terminated (TERMINATED)
+Task 105 Stats -> Wait: 192ms, Turnaround: 215ms
+[258ms] SCHEDULER: Task 105 Stats -> Wait: 192ms, Turnaround: 215ms
+[283ms] [ORCHESTRATOR] [COMPLETE] Task 105 execution completed
+[258ms] SCHEDULER: Task 102 selected (Round Robin)
+[283ms] [ORCHESTRATOR] [EXECUTE] Starting execution of Task 102
+[258ms] SCHEDULER: Context Switch - Saving state of Task 105
+[259ms] SCHEDULER: Context Switch - Loading state of Task 102
+[284ms] [ORCHESTRATOR] [AISLE_REQUEST] Task 102 requesting Aisle 2
+[8ms] CONCURRENCY: Banker's Algorithm checking for Task 102 on Aisle 2...
+[9ms] CONCURRENCY: SAFE STATE — Aisle 2 is available for Task 102
+[0ms] CONCURRENCY: Task 102 requesting Aisle 2
+[1ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 102
+[284ms] [CONCURRENCY] [AISLE_ACQUIRED] Task 102 acquired Aisle 2
+[285ms] [DISK] [PATH_SELECTED] Task 102 using SSTF algorithm
+[28ms] DISK: Task 102 executing path: [40, 20, 10]
+[29ms] DISK: Robot moving from shelf 40 to 40 (distance: 0)
+[30ms] DISK: Robot picked item at shelf 40 (pick cost: 1ms)
+[31ms] DISK: Robot moving from shelf 40 to 20 (distance: 20)
+[32ms] DISK: Robot picked item at shelf 20 (pick cost: 1ms)
+[33ms] DISK: Robot moving from shelf 20 to 10 (distance: 10)
+[34ms] DISK: Robot picked item at shelf 10 (pick cost: 1ms)
+DISK: Task 102 -> distance=60, time=12ms, directionChanges=1
+[286ms] [ORCHESTRATOR] [RUNNING] Task 102 executing for 30ms
+[2ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 102
+[317ms] [CONCURRENCY] [AISLE_RELEASED] Task 102 released Aisle 2
+Memory for Task 102 deallocated (20 units freed)
+[317ms] [MEMORY] [DEALLOCATE] Memory deallocated for Task 102
+[293ms] KERNEL: Task 102 terminated (TERMINATED)
+Task 102 Stats -> Wait: 217ms, Turnaround: 250ms
+[292ms] SCHEDULER: Task 102 Stats -> Wait: 217ms, Turnaround: 250ms
+[317ms] [ORCHESTRATOR] [COMPLETE] Task 102 execution completed
+[317ms] [ORCHESTRATOR] [FINISH] Simulation finished. Tasks completed: 5
+
+============================================================
+PHASE 1 SIMULATION COMPLETE - FINAL STATISTICS
+============================================================
+
+========== SCHEDULER STATS ==========
+Completed Tasks Selected: 5
+Average Wait Time: 171.80 ms
+Average Turnaround Time: 197.20 ms
+CPU Utilization: Calculated externally (based on active running times)
+=====================================
+
+
+========== MEMORY STATISTICS ==========
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+Total Memory: 500 units
+=========================================
+
+
+========== CONCURRENCY STATS ==========
+Deadlocks Prevented : 0
+Tasks Still Waiting : 0
+========================================
+
+
+========== DISK I/O STATISTICS ==========
+Total Seek Distance: 300 units
+Total Seek Time: 60 ms
+Total Direction Changes: 5
+Robot Speed: 5 units/ms
+=========================================
+
+
+========== SYSTEM STATISTICS ==========
+Total Events Logged: 61
+Simulation Duration: 328 ms
+=========================================
+
+============================================================
+PHASE 1 COMPLETE
+============================================================

@@ -1,0 +1,102 @@
+// WaitingQueue.java
+// Tasks that cannot acquire an aisle semaphore are placed here.
+// When an aisle is released, the next waiting task is notified.
+package concurrency;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+
+public class WaitingQueue {
+
+    // Maps aisle index → queue of taskIDs waiting for that aisle
+    private final Map<Integer, Queue<Integer>> queues;
+    private int totalDeadlocksPrevented = 0;
+    private long clock = 0;
+
+    public WaitingQueue(int numberOfAisles) {
+        queues = new HashMap<>();
+        for (int i = 0; i < numberOfAisles; i++) {
+            queues.put(i, new LinkedList<>());
+        }
+    }
+
+    public void setClock(long clock) {
+        this.clock = clock;
+    }
+
+    private void log(String message) {
+        System.out.println("[" + clock + "ms] CONCURRENCY: " + message);
+        clock++;
+    }
+
+    /** Add a task to the waiting queue for a specific aisle */
+    public void addToQueue(int taskID, int aisle) {
+        queues.get(aisle).add(taskID);
+        log("Task " + taskID + " added to waiting queue for Aisle " + aisle
+                + " (queue size: " + queues.get(aisle).size() + ")");
+    }
+
+    /** Check if a task is already waiting for an aisle */
+    public boolean isWaiting(int taskID, int aisle) {
+        return queues.get(aisle).contains(taskID);
+    }
+
+    /**
+     * notifyWaitingTasks: called when an aisle is released.
+     * Wakes up the next task in the queue for that aisle.
+     * Returns the next taskID to run, or -1 if nobody is waiting.
+     */
+    public int notifyWaitingTasks(int aisle) {
+        Queue<Integer> queue = queues.get(aisle);
+        if (queue != null && !queue.isEmpty()) {
+            int nextTaskID = queue.poll();
+            log("Aisle " + aisle + " free — notifying Task " + nextTaskID + " to proceed");
+            return nextTaskID;
+        } else {
+            log("No tasks waiting for Aisle " + aisle);
+            return -1;
+        }
+    }
+
+    /** Remove a task from all queues (e.g. if task is terminated/cancelled) */
+    public void removeTask(int taskID) {
+        for (Queue<Integer> queue : queues.values()) {
+            queue.remove(taskID);
+        }
+        log("Task " + taskID + " removed from all waiting queues");
+    }
+
+    /** Returns how many tasks are waiting for a specific aisle */
+    public int getQueueSize(int aisle) {
+        return queues.getOrDefault(aisle, new LinkedList<>()).size();
+    }
+
+    /** Returns total tasks waiting across all aisles */
+    public int getTotalWaiting() {
+        return queues.values().stream().mapToInt(Queue::size).sum();
+    }
+
+    public void incrementDeadlocksPrevented() {
+        totalDeadlocksPrevented++;
+    }
+
+    public int getTotalDeadlocksPrevented() {
+        return totalDeadlocksPrevented;
+    }
+
+    /** Print waiting queue stats — called at end of simulation */
+    public void printStats() {
+        System.out.println("\n========== CONCURRENCY STATS ==========");
+        System.out.println("Deadlocks Prevented : " + totalDeadlocksPrevented);
+        System.out.println("Tasks Still Waiting : " + getTotalWaiting());
+        for (Map.Entry<Integer, Queue<Integer>> entry : queues.entrySet()) {
+            if (!entry.getValue().isEmpty()) {
+                System.out.println("  Aisle " + entry.getKey()
+                        + " waiting queue: " + entry.getValue());
+            }
+        }
+        System.out.println("========================================\n");
+    }
+}

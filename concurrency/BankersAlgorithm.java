@@ -1,0 +1,140 @@
+// BankersAlgorithm.java
+// Concept: Deadlock Prevention using Banker's Algorithm
+// Checks if granting aisle access to a task results in a SAFE or UNSAFE state
+package concurrency;
+
+import shared.Task;
+import java.util.HashMap;
+import java.util.Map;
+
+public class BankersAlgorithm {
+
+    private final int totalAisles;
+    private final AisleSemaphore[] aisles;
+
+    // Maps taskID → aisle it currently holds (-1 if none)
+    private final Map<Integer, Integer> taskHolding;
+
+    private long clock = 0;
+
+    public BankersAlgorithm(int totalAisles, AisleSemaphore[] aisles) {
+        this.totalAisles  = totalAisles;
+        this.aisles       = aisles;
+        this.taskHolding  = new HashMap<>();
+    }
+
+    public void setClock(long clock) {
+        this.clock = clock;
+    }
+
+    private void log(String message) {
+        System.out.println("[" + clock + "ms] CONCURRENCY: " + message);
+        clock++;
+    }
+
+    /** Register that a task is now holding an aisle */
+    public void registerHolding(int taskID, int aisle) {
+        taskHolding.put(taskID, aisle);
+    }
+
+    /** Unregister when task releases its aisle */
+    public void unregisterHolding(int taskID) {
+        taskHolding.remove(taskID);
+    }
+
+    /**
+     * isSafeState: checks whether granting aisle to taskID leads to a safe state.
+     *
+     * Logic:
+     *   - If target aisle is FREE → SAFE
+     *   - If target aisle is LOCKED:
+     *       → find which task holds it
+     *       → check if that holder is waiting for an aisle held by taskID (circular wait)
+     *       → if circular wait detected → UNSAFE
+     *       → otherwise → safe to queue and wait
+     */
+    public boolean isSafeState(Task t, int aisle) {
+        int taskID = t.getTaskID();
+        log("Banker's Algorithm checking for Task " + taskID + " on Aisle " + aisle + "...");
+
+        // Aisle is free — safe to proceed
+        if (!aisles[aisle].isLocked()) {
+            log("SAFE STATE — Aisle " + aisle + " is available for Task " + taskID);
+            return true;
+        }
+
+        // Aisle is locked — check for circular wait
+        if (checkDeadlock(t)) {
+            log("UNSAFE STATE — Deadlock risk detected for Task " + taskID);
+            return false;
+        }
+
+        log("Aisle " + aisle + " locked, but no circular wait — Task " + taskID + " may wait");
+        return false; // locked, but safe to wait (WaitingQueue will handle it)
+    }
+
+    /**
+     * checkDeadlock: detects circular wait involving this task.
+     * Returns true if a deadlock would occur.
+     */
+    public boolean checkDeadlock(Task t) {
+        int taskID = t.getTaskID();
+        int requestedAisle = t.getTargetAisle();
+
+        // Who holds the requested aisle?
+        int holderTaskID = getHolderOf(requestedAisle);
+        if (holderTaskID == -1) return false; // nobody holds it
+
+        // Does the holder need an aisle that taskID holds?
+        int aisleHeldByRequester = taskHolding.getOrDefault(taskID, -1);
+        if (aisleHeldByRequester == -1) return false; // taskID holds nothing, no cycle
+
+        // Is the holder waiting for the aisle held by requester?
+        if (!aisles[aisleHeldByRequester].isLocked()) return false;
+
+        int holderOfRequesterAisle = getHolderOf(aisleHeldByRequester);
+        if (holderOfRequesterAisle == holderTaskID) {
+            // Circular wait: taskID → requestedAisle ← holderTaskID → aisleHeldByRequester ← taskID
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * preventDeadlock: deny aisle access if unsafe.
+     * Returns true if task is safe to enter immediately.
+     */
+    public boolean preventDeadlock(Task t) {
+        int taskID = t.getTaskID();
+        int aisle  = t.getTargetAisle();
+
+        if (checkDeadlock(t)) {
+            log("DEADLOCK PREVENTED — Task " + taskID + " denied access to Aisle " + aisle);
+            return false;
+        }
+        return true;
+    }
+
+    /** Returns the taskID currently holding the given aisle, or -1 if free */
+    private int getHolderOf(int aisle) {
+        for (Map.Entry<Integer, Integer> entry : taskHolding.entrySet()) {
+            if (entry.getValue() == aisle) {
+                return entry.getKey();
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalAisles() {
+        return totalAisles;
+    }
+
+    public int getAvailableAisles() {
+        int count = 0;
+        for (AisleSemaphore a : aisles) {
+            if (!a.isLocked()) count++;
+        }
+        return count;
+    }
+}
