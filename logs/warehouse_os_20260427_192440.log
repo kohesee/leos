@@ -1,0 +1,165 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192440.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[42ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[44ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[33ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[51ms] [USER] [LOGIN] User User1 logged in
+[42ms] [TASK_CREATE] Task 401 created for user User1 (Priority: 1)
+[43ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[60ms] [USER] [LOGIN] User User2 logged in
+[43ms] [TASK_CREATE] Task 402 created for user User2 (Priority: 1)
+[44ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[61ms] [USER] [LOGIN] User User3 logged in
+[44ms] [TASK_CREATE] Task 403 created for user User3 (Priority: 1)
+[44ms] [USER_LOGIN] User User4 (ID: 4) logged in
+[61ms] [USER] [LOGIN] User User4 logged in
+[44ms] [TASK_CREATE] Task 404 created for user User4 (Priority: 1)
+[63ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 4 tasks for 4 users
+
+[64ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 401 allocated 45 units at Floor Index 0-44 (Best Fit)
+[73ms] [MEMORY] [ALLOCATE] Task 401 (User: User1) allocated 45 units at address 0
+Task 402 allocated 40 units at Floor Index 45-84 (Best Fit)
+[73ms] [MEMORY] [ALLOCATE] Task 402 (User: User2) allocated 40 units at address 45
+Task 403 allocated 35 units at Floor Index 85-119 (Best Fit)
+[74ms] [MEMORY] [ALLOCATE] Task 403 (User: User3) allocated 35 units at address 85
+Task 404 allocated 30 units at Floor Index 120-149 (Best Fit)
+[74ms] [MEMORY] [ALLOCATE] Task 404 (User: User4) allocated 30 units at address 120
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[74ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[79ms] [SCHEDULER] [SELECT] Task 401 selected (Priority: 1)
+[80ms] [SCHEDULER] [SELECT] Task 404 selected (Priority: 1)
+[80ms] [SCHEDULER] [SELECT] Task 403 selected (Priority: 1)
+[79ms] [SCHEDULER] [SELECT] Task 402 selected (Priority: 1)
+[80ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 403
+[80ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 404
+[80ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 401
+[81ms] [TASK] [AISLE_REQUEST] Task 404 requesting Aisle 2
+[81ms] [TASK] [AISLE_REQUEST] Task 403 requesting Aisle 2
+[81ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 402
+[82ms] [TASK] [AISLE_REQUEST] Task 401 requesting Aisle 1
+[83ms] [TASK] [AISLE_REQUEST] Task 402 requesting Aisle 1
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 404 on Aisle 2...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 403 on Aisle 2...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 401 on Aisle 1...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 402 on Aisle 1...
+[3ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 401
+[2ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 403
+[1ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 404
+[0ms] CONCURRENCY: Task 403 requesting Aisle 2
+[0ms] CONCURRENCY: Task 401 requesting Aisle 1
+[4ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 402
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 401
+[1ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 403
+[0ms] CONCURRENCY: Task 404 requesting Aisle 2
+[91ms] [CONCURRENCY] [ACQUIRE] Task 403 acquired Aisle 2 semaphore
+[91ms] [CONCURRENCY] [ACQUIRE] Task 401 acquired Aisle 1 semaphore
+[1ms] CONCURRENCY: Task 402 requesting Aisle 1
+[95ms] [DISK] [PATH] Task 401 using TIE algorithm
+[95ms] [DISK] [PATH] Task 403 using TIE algorithm
+[95ms] [DISK] [EXECUTE] Task 401 executed disk I/O - seek distance: 50
+[95ms] [DISK] [EXECUTE] Task 403 executed disk I/O - seek distance: 50
+[95ms] [MEMORY] [LRU_ACCESS] Task 401 LRU updated
+[97ms] [MEMORY] [LRU_ACCESS] Task 403 LRU updated
+[109ms] [TASK] [EXECUTE] Task 403 executing for 11ms
+[3ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 404
+[3ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 403
+[109ms] [CONCURRENCY] [ACQUIRE] Task 404 acquired Aisle 2 semaphore
+[110ms] [CONCURRENCY] [RELEASE] Task 403 released Aisle 2
+[110ms] [DISK] [PATH] Task 404 using TIE algorithm
+Memory for Task 403 deallocated (35 units freed)
+[110ms] [DISK] [EXECUTE] Task 404 executed disk I/O - seek distance: 50
+[110ms] [MEMORY] [DEALLOCATE] Task 403 deallocated memory
+[111ms] [TASK] [EXECUTE] Task 401 executing for 13ms
+[110ms] [MEMORY] [LRU_ACCESS] Task 404 LRU updated
+[3ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 401
+[111ms] [CONCURRENCY] [RELEASE] Task 401 released Aisle 1
+Memory for Task 401 deallocated (45 units freed)
+[111ms] [MEMORY] [DEALLOCATE] Task 401 deallocated memory
+[4ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 402
+[112ms] [CONCURRENCY] [ACQUIRE] Task 402 acquired Aisle 1 semaphore
+[112ms] [DISK] [PATH] Task 402 using TIE algorithm
+[112ms] [DISK] [EXECUTE] Task 402 executed disk I/O - seek distance: 50
+[113ms] [MEMORY] [LRU_ACCESS] Task 402 LRU updated
+[97ms] [TASK_TERMINATE] Task 403 completed for user User3 (Wait: 29ms, Turnaround: 50ms)
+[97ms] [TASK_TERMINATE] Task 401 completed for user User1 (Wait: 38ms, Turnaround: 60ms)
+[118ms] [TASK] [COMPLETE] Task 403 completed (Wait: 29ms, Turnaround: 50ms)
+[118ms] [TASK] [COMPLETE] Task 401 completed (Wait: 38ms, Turnaround: 60ms)
+[122ms] [TASK] [EXECUTE] Task 404 executing for 10ms
+[5ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 404
+[122ms] [CONCURRENCY] [RELEASE] Task 404 released Aisle 2
+Memory for Task 404 deallocated (30 units freed)
+[122ms] [MEMORY] [DEALLOCATE] Task 404 deallocated memory
+[106ms] [TASK_TERMINATE] Task 404 completed for user User4 (Wait: 29ms, Turnaround: 62ms)
+[123ms] [TASK] [COMPLETE] Task 404 completed (Wait: 29ms, Turnaround: 62ms)
+[126ms] [TASK] [EXECUTE] Task 402 executing for 12ms
+[5ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 402
+[126ms] [CONCURRENCY] [RELEASE] Task 402 released Aisle 1
+Memory for Task 402 deallocated (40 units freed)
+[126ms] [MEMORY] [DEALLOCATE] Task 402 deallocated memory
+[109ms] [TASK_TERMINATE] Task 402 completed for user User2 (Wait: 31ms, Turnaround: 66ms)
+[126ms] [TASK] [COMPLETE] Task 402 completed (Wait: 31ms, Turnaround: 66ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 2/1, AvgWait: 38.00ms]
+Pending Tasks: 0
+Session Duration: 81ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 2/1, AvgWait: 31.00ms]
+Pending Tasks: 0
+Session Duration: 71ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 2/1, AvgWait: 29.00ms]
+Pending Tasks: 0
+Session Duration: 72ms
+User[ID=4, Name=User4, Status=ACTIVE, Tasks: 2/1, AvgWait: 29.00ms]
+Pending Tasks: 0
+Session Duration: 71ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 8
+Average Wait Time: 31.75ms
+Average Turnaround: 59.50ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 4
+Total Tasks: 8
+Total Events Logged: 12
+Simulation Duration: 147ms
+
+=====================================
+[131ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

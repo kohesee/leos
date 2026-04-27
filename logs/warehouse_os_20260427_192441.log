@@ -1,0 +1,165 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192441.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[50ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[51ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[37ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[59ms] [USER] [LOGIN] User User1 logged in
+[44ms] [TASK_CREATE] Task 601 created for user User1 (Priority: 3)
+[45ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[67ms] [USER] [LOGIN] User User2 logged in
+[46ms] [TASK_CREATE] Task 602 created for user User2 (Priority: 3)
+[46ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[68ms] [USER] [LOGIN] User User3 logged in
+[47ms] [TASK_CREATE] Task 603 created for user User3 (Priority: 3)
+[47ms] [USER_LOGIN] User User4 (ID: 4) logged in
+[69ms] [USER] [LOGIN] User User4 logged in
+[47ms] [TASK_CREATE] Task 604 created for user User4 (Priority: 3)
+[73ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 4 tasks for 4 users
+
+[74ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 601 allocated 40 units at Floor Index 0-39 (Best Fit)
+[85ms] [MEMORY] [ALLOCATE] Task 601 (User: User1) allocated 40 units at address 0
+Task 602 allocated 45 units at Floor Index 40-84 (Best Fit)
+[86ms] [MEMORY] [ALLOCATE] Task 602 (User: User2) allocated 45 units at address 40
+Task 603 allocated 35 units at Floor Index 85-119 (Best Fit)
+[89ms] [MEMORY] [ALLOCATE] Task 603 (User: User3) allocated 35 units at address 85
+Task 604 allocated 30 units at Floor Index 120-149 (Best Fit)
+[89ms] [MEMORY] [ALLOCATE] Task 604 (User: User4) allocated 30 units at address 120
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[90ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[94ms] [SCHEDULER] [SELECT] Task 601 selected (Priority: 3)
+[94ms] [SCHEDULER] [SELECT] Task 603 selected (Priority: 3)
+[94ms] [SCHEDULER] [SELECT] Task 602 selected (Priority: 3)
+[95ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 603
+[94ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 601
+[94ms] [SCHEDULER] [SELECT] Task 604 selected (Priority: 3)
+[95ms] [TASK] [AISLE_REQUEST] Task 601 requesting Aisle 1
+[95ms] [TASK] [AISLE_REQUEST] Task 603 requesting Aisle 5
+[95ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 602
+[97ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 604
+[97ms] [TASK] [AISLE_REQUEST] Task 602 requesting Aisle 3
+[97ms] [TASK] [AISLE_REQUEST] Task 604 requesting Aisle 7
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 601 on Aisle 1...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 603 on Aisle 5...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 602 on Aisle 3...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 604 on Aisle 7...
+[3ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 602
+[2ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 603
+[0ms] CONCURRENCY: Task 602 requesting Aisle 3
+[1ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 601
+[0ms] CONCURRENCY: Task 601 requesting Aisle 1
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 601
+[1ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 602
+[0ms] CONCURRENCY: Task 603 requesting Aisle 5
+[4ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 604
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 603
+[106ms] [CONCURRENCY] [ACQUIRE] Task 602 acquired Aisle 3 semaphore
+[106ms] [CONCURRENCY] [ACQUIRE] Task 601 acquired Aisle 1 semaphore
+[107ms] [CONCURRENCY] [ACQUIRE] Task 603 acquired Aisle 5 semaphore
+[0ms] CONCURRENCY: Task 604 requesting Aisle 7
+[1ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 604
+[108ms] [CONCURRENCY] [ACQUIRE] Task 604 acquired Aisle 7 semaphore
+[111ms] [DISK] [PATH] Task 602 using TIE algorithm
+[111ms] [DISK] [PATH] Task 603 using TIE algorithm
+[111ms] [DISK] [PATH] Task 601 using TIE algorithm
+[111ms] [DISK] [PATH] Task 604 using TIE algorithm
+[112ms] [DISK] [EXECUTE] Task 601 executed disk I/O - seek distance: 50
+[112ms] [DISK] [EXECUTE] Task 603 executed disk I/O - seek distance: 50
+[111ms] [DISK] [EXECUTE] Task 602 executed disk I/O - seek distance: 50
+[112ms] [MEMORY] [LRU_ACCESS] Task 603 LRU updated
+[112ms] [MEMORY] [LRU_ACCESS] Task 601 LRU updated
+[112ms] [DISK] [EXECUTE] Task 604 executed disk I/O - seek distance: 50
+[114ms] [MEMORY] [LRU_ACCESS] Task 602 LRU updated
+[114ms] [MEMORY] [LRU_ACCESS] Task 604 LRU updated
+[132ms] [TASK] [EXECUTE] Task 603 executing for 17ms
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 603
+[132ms] [CONCURRENCY] [RELEASE] Task 603 released Aisle 5
+[133ms] [TASK] [EXECUTE] Task 602 executing for 18ms
+Memory for Task 603 deallocated (35 units freed)
+[2ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 602
+[134ms] [MEMORY] [DEALLOCATE] Task 603 deallocated memory
+[134ms] [TASK] [EXECUTE] Task 604 executing for 19ms
+[134ms] [TASK] [EXECUTE] Task 601 executing for 20ms
+[2ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 604
+[134ms] [CONCURRENCY] [RELEASE] Task 602 released Aisle 3
+[135ms] [CONCURRENCY] [RELEASE] Task 604 released Aisle 7
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 601
+Memory for Task 604 deallocated (30 units freed)
+Memory for Task 602 deallocated (45 units freed)
+[136ms] [MEMORY] [DEALLOCATE] Task 604 deallocated memory
+[135ms] [CONCURRENCY] [RELEASE] Task 601 released Aisle 1
+Memory for Task 601 deallocated (40 units freed)
+[136ms] [MEMORY] [DEALLOCATE] Task 602 deallocated memory
+[136ms] [MEMORY] [DEALLOCATE] Task 601 deallocated memory
+[117ms] [TASK_TERMINATE] Task 604 completed for user User4 (Wait: 38ms, Turnaround: 67ms)
+[118ms] [TASK_TERMINATE] Task 601 completed for user User1 (Wait: 45ms, Turnaround: 77ms)
+[117ms] [TASK_TERMINATE] Task 603 completed for user User3 (Wait: 36ms, Turnaround: 65ms)
+[117ms] [TASK_TERMINATE] Task 602 completed for user User2 (Wait: 37ms, Turnaround: 69ms)
+[144ms] [TASK] [COMPLETE] Task 601 completed (Wait: 45ms, Turnaround: 77ms)
+[145ms] [TASK] [COMPLETE] Task 602 completed (Wait: 37ms, Turnaround: 69ms)
+[145ms] [TASK] [COMPLETE] Task 604 completed (Wait: 38ms, Turnaround: 67ms)
+[145ms] [TASK] [COMPLETE] Task 603 completed (Wait: 36ms, Turnaround: 65ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 2/1, AvgWait: 45.00ms]
+Pending Tasks: 0
+Session Duration: 92ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 2/1, AvgWait: 37.00ms]
+Pending Tasks: 0
+Session Duration: 83ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 2/1, AvgWait: 36.00ms]
+Pending Tasks: 0
+Session Duration: 82ms
+User[ID=4, Name=User4, Status=ACTIVE, Tasks: 2/1, AvgWait: 38.00ms]
+Pending Tasks: 0
+Session Duration: 82ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 8
+Average Wait Time: 39.00ms
+Average Turnaround: 69.50ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 4
+Total Tasks: 8
+Total Events Logged: 12
+Simulation Duration: 169ms
+
+=====================================
+[148ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

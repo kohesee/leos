@@ -1,0 +1,139 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_180637.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[47ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[49ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[38ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[62ms] [USER] [LOGIN] User User1 logged in
+[45ms] [TASK_CREATE] Task 101 created for user User1 (Priority: 1)
+[46ms] [TASK_CREATE] Task 102 created for user User1 (Priority: 1)
+[47ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[69ms] [USER] [LOGIN] User User2 logged in
+[48ms] [TASK_CREATE] Task 104 created for user User2 (Priority: 1)
+[75ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 3 tasks for 2 users
+
+[75ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 101 allocated 50 units at Floor Index 0-49 (Best Fit)
+[93ms] [MEMORY] [ALLOCATE] Task 101 (User: User1) allocated 50 units at address 0
+Task 102 allocated 45 units at Floor Index 50-94 (Best Fit)
+[94ms] [MEMORY] [ALLOCATE] Task 102 (User: User1) allocated 45 units at address 50
+Task 104 allocated 50 units at Floor Index 95-144 (Best Fit)
+[94ms] [MEMORY] [ALLOCATE] Task 104 (User: User2) allocated 50 units at address 95
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[96ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[100ms] [SCHEDULER] [SELECT] Task 102 selected (Priority: 1)
+[100ms] [SCHEDULER] [SELECT] Task 101 selected (Priority: 1)
+[100ms] [SCHEDULER] [SELECT] Task 104 selected (Priority: 1)
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 101
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 102
+[102ms] [TASK] [AISLE_REQUEST] Task 101 requesting Aisle 3
+[102ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 104
+[102ms] [TASK] [AISLE_REQUEST] Task 102 requesting Aisle 5
+[103ms] [TASK] [AISLE_REQUEST] Task 104 requesting Aisle 1
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 101 on Aisle 3...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 104 on Aisle 1...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 102 on Aisle 5...
+[2ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 104
+[1ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 101
+[0ms] CONCURRENCY: Task 104 requesting Aisle 1
+[3ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 102
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 104
+[0ms] CONCURRENCY: Task 101 requesting Aisle 3
+[114ms] [CONCURRENCY] [ACQUIRE] Task 104 acquired Aisle 1 semaphore
+[0ms] CONCURRENCY: Task 102 requesting Aisle 5
+[1ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 101
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 102
+[115ms] [CONCURRENCY] [ACQUIRE] Task 101 acquired Aisle 3 semaphore
+[116ms] [CONCURRENCY] [ACQUIRE] Task 102 acquired Aisle 5 semaphore
+[119ms] [DISK] [PATH] Task 101 using TIE algorithm
+[119ms] [DISK] [PATH] Task 104 using TIE algorithm
+[119ms] [DISK] [PATH] Task 102 using TIE algorithm
+[120ms] [DISK] [EXECUTE] Task 104 executed disk I/O - seek distance: 50
+[119ms] [DISK] [EXECUTE] Task 101 executed disk I/O - seek distance: 50
+[120ms] [MEMORY] [LRU_ACCESS] Task 104 LRU updated
+[120ms] [DISK] [EXECUTE] Task 102 executed disk I/O - seek distance: 50
+[123ms] [MEMORY] [LRU_ACCESS] Task 102 LRU updated
+[122ms] [MEMORY] [LRU_ACCESS] Task 101 LRU updated
+[132ms] [TASK] [EXECUTE] Task 104 executing for 8ms
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 104
+[133ms] [CONCURRENCY] [RELEASE] Task 104 released Aisle 1
+Memory for Task 104 deallocated (50 units freed)
+[134ms] [MEMORY] [DEALLOCATE] Task 104 deallocated memory
+[135ms] [TASK] [EXECUTE] Task 101 executing for 10ms
+[2ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 101
+[135ms] [CONCURRENCY] [RELEASE] Task 101 released Aisle 3
+Memory for Task 101 deallocated (50 units freed)
+[136ms] [MEMORY] [DEALLOCATE] Task 101 deallocated memory
+[137ms] [TASK] [EXECUTE] Task 102 executing for 12ms
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 102
+[137ms] [CONCURRENCY] [RELEASE] Task 102 released Aisle 5
+Memory for Task 102 deallocated (45 units freed)
+[140ms] [MEMORY] [DEALLOCATE] Task 102 deallocated memory
+[119ms] [TASK_TERMINATE] Task 104 completed for user User2 (Wait: 43ms, Turnaround: 64ms)
+[118ms] [TASK_TERMINATE] Task 101 completed for user User1 (Wait: 51ms, Turnaround: 74ms)
+[119ms] [TASK_TERMINATE] Task 102 completed for user User1 (Wait: 46ms, Turnaround: 73ms)
+[146ms] [TASK] [COMPLETE] Task 104 completed (Wait: 43ms, Turnaround: 64ms)
+[146ms] [TASK] [COMPLETE] Task 101 completed (Wait: 51ms, Turnaround: 74ms)
+[146ms] [TASK] [COMPLETE] Task 102 completed (Wait: 46ms, Turnaround: 73ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 4/2, AvgWait: 48.50ms]
+Pending Tasks: 0
+Session Duration: 96ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 2/1, AvgWait: 43.00ms]
+Pending Tasks: 0
+Session Duration: 83ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 6
+Average Wait Time: 45.75ms
+Average Turnaround: 68.75ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 2
+Total Tasks: 6
+Total Events Logged: 8
+Simulation Duration: 181ms
+
+=====================================
+
+============================================================
+ALL FEATURES INTEGRATED SUCCESSFULLY
+
+============================================================
+[161ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

@@ -1,0 +1,137 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192445.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[54ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[56ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[42ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[66ms] [USER] [LOGIN] User User1 logged in
+[51ms] [TASK_CREATE] Task 1501 created for user User1 (Priority: 1)
+[53ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[77ms] [USER] [LOGIN] User User2 logged in
+[54ms] [TASK_CREATE] Task 1502 created for user User2 (Priority: 2)
+[55ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[78ms] [USER] [LOGIN] User User3 logged in
+[55ms] [TASK_CREATE] Task 1503 created for user User3 (Priority: 3)
+[81ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 3 tasks for 3 users
+
+[82ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 1501 allocated 40 units at Floor Index 0-39 (Best Fit)
+[95ms] [MEMORY] [ALLOCATE] Task 1501 (User: User1) allocated 40 units at address 0
+Task 1502 allocated 40 units at Floor Index 40-79 (Best Fit)
+[96ms] [MEMORY] [ALLOCATE] Task 1502 (User: User2) allocated 40 units at address 40
+Task 1503 allocated 40 units at Floor Index 80-119 (Best Fit)
+[96ms] [MEMORY] [ALLOCATE] Task 1503 (User: User3) allocated 40 units at address 80
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[96ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[101ms] [SCHEDULER] [SELECT] Task 1502 selected (Priority: 2)
+[101ms] [SCHEDULER] [SELECT] Task 1503 selected (Priority: 3)
+[101ms] [SCHEDULER] [SELECT] Task 1501 selected (Priority: 1)
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1503
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1502
+[102ms] [TASK] [AISLE_REQUEST] Task 1503 requesting Aisle 5
+[102ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1501
+[102ms] [TASK] [AISLE_REQUEST] Task 1502 requesting Aisle 3
+[103ms] [TASK] [AISLE_REQUEST] Task 1501 requesting Aisle 1
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1503 on Aisle 5...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1502 on Aisle 3...
+[2ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 1502
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1501 on Aisle 1...
+[4ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1501
+[1ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 1503
+[0ms] CONCURRENCY: Task 1501 requesting Aisle 1
+[0ms] CONCURRENCY: Task 1502 requesting Aisle 3
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1501
+[0ms] CONCURRENCY: Task 1503 requesting Aisle 5
+[112ms] [CONCURRENCY] [ACQUIRE] Task 1501 acquired Aisle 1 semaphore
+[1ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 1502
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 1503
+[113ms] [CONCURRENCY] [ACQUIRE] Task 1502 acquired Aisle 3 semaphore
+[113ms] [CONCURRENCY] [ACQUIRE] Task 1503 acquired Aisle 5 semaphore
+[116ms] [DISK] [PATH] Task 1501 using TIE algorithm
+[116ms] [DISK] [PATH] Task 1502 using TIE algorithm
+[116ms] [DISK] [PATH] Task 1503 using TIE algorithm
+[117ms] [DISK] [EXECUTE] Task 1502 executed disk I/O - seek distance: 50
+[117ms] [DISK] [EXECUTE] Task 1501 executed disk I/O - seek distance: 50
+[118ms] [MEMORY] [LRU_ACCESS] Task 1502 LRU updated
+[117ms] [DISK] [EXECUTE] Task 1503 executed disk I/O - seek distance: 50
+[118ms] [MEMORY] [LRU_ACCESS] Task 1501 LRU updated
+[118ms] [MEMORY] [LRU_ACCESS] Task 1503 LRU updated
+[130ms] [TASK] [EXECUTE] Task 1501 executing for 10ms
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1501
+[131ms] [TASK] [EXECUTE] Task 1502 executing for 11ms
+[2ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 1502
+[131ms] [CONCURRENCY] [RELEASE] Task 1501 released Aisle 1
+[131ms] [CONCURRENCY] [RELEASE] Task 1502 released Aisle 3
+Memory for Task 1501 deallocated (40 units freed)
+[132ms] [TASK] [EXECUTE] Task 1503 executing for 12ms
+[132ms] [MEMORY] [DEALLOCATE] Task 1501 deallocated memory
+Memory for Task 1502 deallocated (40 units freed)
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 1503
+[133ms] [ERROR] [EXECUTE] Task 1502 error: null
+[133ms] [CONCURRENCY] [RELEASE] Task 1503 released Aisle 5
+Memory for Task 1503 deallocated (40 units freed)
+[134ms] [MEMORY] [DEALLOCATE] Task 1503 deallocated memory
+[114ms] [TASK_TERMINATE] Task 1501 completed for user User1 (Wait: 44ms, Turnaround: 66ms)
+[115ms] [TASK_TERMINATE] Task 1503 completed for user User3 (Wait: 33ms, Turnaround: 56ms)
+[143ms] [TASK] [COMPLETE] Task 1503 completed (Wait: 33ms, Turnaround: 56ms)
+[143ms] [TASK] [COMPLETE] Task 1501 completed (Wait: 44ms, Turnaround: 66ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 2/1, AvgWait: 44.00ms]
+Pending Tasks: 0
+Session Duration: 84ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 0/1, AvgWait: 0.00ms]
+Pending Tasks: 1
+Session Duration: 72ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 2/1, AvgWait: 33.00ms]
+Pending Tasks: 0
+Session Duration: 71ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 4
+Average Wait Time: 25.67ms
+Average Turnaround: 40.67ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 3
+Total Tasks: 4
+Total Events Logged: 8
+Simulation Duration: 175ms
+
+=====================================
+[154ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

@@ -1,0 +1,941 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_191450.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[43ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[47ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[35ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[55ms] [USER] [LOGIN] User User1 logged in
+[44ms] [TASK_CREATE] Task 101 created for user User1 (Priority: 1)
+[46ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[64ms] [USER] [LOGIN] User User2 logged in
+[47ms] [TASK_CREATE] Task 102 created for user User2 (Priority: 1)
+[47ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[65ms] [USER] [LOGIN] User User3 logged in
+[47ms] [TASK_CREATE] Task 103 created for user User3 (Priority: 2)
+[47ms] [TASK_CREATE] Task 201 created for user User1 (Priority: 1)
+[48ms] [TASK_CREATE] Task 202 created for user User2 (Priority: 1)
+[48ms] [TASK_CREATE] Task 203 created for user User3 (Priority: 2)
+[49ms] [TASK_CREATE] Task 301 created for user User1 (Priority: 1)
+[49ms] [TASK_CREATE] Task 302 created for user User2 (Priority: 1)
+[50ms] [TASK_CREATE] Task 303 created for user User3 (Priority: 2)
+[50ms] [USER_LOGIN] User User4 (ID: 4) logged in
+[69ms] [USER] [LOGIN] User User4 logged in
+[51ms] [TASK_CREATE] Task 304 created for user User4 (Priority: 2)
+[52ms] [TASK_CREATE] Task 401 created for user User1 (Priority: 1)
+[52ms] [TASK_CREATE] Task 402 created for user User2 (Priority: 1)
+[53ms] [TASK_CREATE] Task 403 created for user User3 (Priority: 1)
+[53ms] [TASK_CREATE] Task 404 created for user User4 (Priority: 1)
+[54ms] [TASK_CREATE] Task 501 created for user User1 (Priority: 3)
+[54ms] [TASK_CREATE] Task 502 created for user User2 (Priority: 1)
+[55ms] [TASK_CREATE] Task 503 created for user User3 (Priority: 1)
+[55ms] [TASK_CREATE] Task 504 created for user User4 (Priority: 3)
+[56ms] [TASK_CREATE] Task 601 created for user User1 (Priority: 3)
+[56ms] [TASK_CREATE] Task 602 created for user User2 (Priority: 3)
+[57ms] [TASK_CREATE] Task 603 created for user User3 (Priority: 3)
+[58ms] [TASK_CREATE] Task 604 created for user User4 (Priority: 3)
+[59ms] [TASK_CREATE] Task 701 created for user User1 (Priority: 1)
+[61ms] [TASK_CREATE] Task 702 created for user User2 (Priority: 1)
+[61ms] [TASK_CREATE] Task 703 created for user User3 (Priority: 2)
+[62ms] [TASK_CREATE] Task 704 created for user User4 (Priority: 2)
+[63ms] [TASK_CREATE] Task 801 created for user User1 (Priority: 1)
+[63ms] [TASK_CREATE] Task 802 created for user User2 (Priority: 1)
+[64ms] [TASK_CREATE] Task 803 created for user User3 (Priority: 2)
+[64ms] [TASK_CREATE] Task 804 created for user User4 (Priority: 2)
+[65ms] [TASK_CREATE] Task 901 created for user User1 (Priority: 1)
+[65ms] [TASK_CREATE] Task 902 created for user User2 (Priority: 1)
+[65ms] [TASK_CREATE] Task 903 created for user User3 (Priority: 2)
+[66ms] [TASK_CREATE] Task 904 created for user User4 (Priority: 2)
+[68ms] [TASK_CREATE] Task 1001 created for user User1 (Priority: 1)
+[69ms] [TASK_CREATE] Task 1002 created for user User2 (Priority: 2)
+[69ms] [TASK_CREATE] Task 1003 created for user User3 (Priority: 1)
+[70ms] [TASK_CREATE] Task 1004 created for user User4 (Priority: 2)
+[70ms] [TASK_CREATE] Task 1101 created for user User1 (Priority: 1)
+[71ms] [TASK_CREATE] Task 1102 created for user User2 (Priority: 1)
+[71ms] [TASK_CREATE] Task 1103 created for user User3 (Priority: 2)
+[72ms] [TASK_CREATE] Task 1201 created for user User1 (Priority: 1)
+[72ms] [TASK_CREATE] Task 1202 created for user User2 (Priority: 1)
+[73ms] [TASK_CREATE] Task 1203 created for user User3 (Priority: 2)
+[73ms] [TASK_CREATE] Task 1204 created for user User4 (Priority: 2)
+[74ms] [TASK_CREATE] Task 1301 created for user User1 (Priority: 1)
+[74ms] [TASK_CREATE] Task 1302 created for user User2 (Priority: 1)
+[75ms] [TASK_CREATE] Task 1303 created for user User3 (Priority: 2)
+[75ms] [TASK_CREATE] Task 1304 created for user User4 (Priority: 3)
+[77ms] [TASK_CREATE] Task 1401 created for user User1 (Priority: 1)
+[78ms] [TASK_CREATE] Task 1402 created for user User1 (Priority: 1)
+[78ms] [TASK_CREATE] Task 1403 created for user User2 (Priority: 1)
+[79ms] [TASK_CREATE] Task 1404 created for user User2 (Priority: 1)
+[79ms] [TASK_CREATE] Task 1501 created for user User1 (Priority: 1)
+[80ms] [TASK_CREATE] Task 1502 created for user User2 (Priority: 2)
+[80ms] [TASK_CREATE] Task 1503 created for user User3 (Priority: 3)
+[80ms] [TASK_CREATE] Task 104 created for user User2 (Priority: 1)
+[101ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 57 tasks for 4 users
+
+[102ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 101 allocated 40 units at Floor Index 0-39 (Best Fit)
+[118ms] [MEMORY] [ALLOCATE] Task 101 (User: User1) allocated 40 units at address 0
+Task 201 allocated 40 units at Floor Index 40-79 (Best Fit)
+[118ms] [MEMORY] [ALLOCATE] Task 201 (User: User1) allocated 40 units at address 40
+Task 301 allocated 40 units at Floor Index 80-119 (Best Fit)
+[119ms] [MEMORY] [ALLOCATE] Task 301 (User: User1) allocated 40 units at address 80
+Task 401 allocated 45 units at Floor Index 120-164 (Best Fit)
+[120ms] [MEMORY] [ALLOCATE] Task 401 (User: User1) allocated 45 units at address 120
+Task 501 allocated 40 units at Floor Index 165-204 (Best Fit)
+[122ms] [MEMORY] [ALLOCATE] Task 501 (User: User1) allocated 40 units at address 165
+Task 601 allocated 40 units at Floor Index 205-244 (Best Fit)
+[122ms] [MEMORY] [ALLOCATE] Task 601 (User: User1) allocated 40 units at address 205
+Task 701 allocated 130 units at Floor Index 245-374 (Best Fit)
+[123ms] [MEMORY] [ALLOCATE] Task 701 (User: User1) allocated 130 units at address 245
+Memory allocation failed for Task 801 (size 180)
+Task 901 allocated 55 units at Floor Index 375-429 (Best Fit)
+[125ms] [MEMORY] [ALLOCATE] Task 901 (User: User1) allocated 55 units at address 375
+Task 1001 allocated 45 units at Floor Index 430-474 (Best Fit)
+[125ms] [MEMORY] [ALLOCATE] Task 1001 (User: User1) allocated 45 units at address 430
+Memory allocation failed for Task 1101 (size 50)
+Memory allocation failed for Task 1201 (size 30)
+Memory allocation failed for Task 1301 (size 60)
+Memory allocation failed for Task 1401 (size 40)
+Memory allocation failed for Task 1402 (size 35)
+Memory allocation failed for Task 1501 (size 40)
+Memory allocation failed for Task 102 (size 45)
+Memory allocation failed for Task 202 (size 45)
+Memory allocation failed for Task 302 (size 45)
+Memory allocation failed for Task 402 (size 40)
+Memory allocation failed for Task 502 (size 45)
+Memory allocation failed for Task 602 (size 45)
+Memory allocation failed for Task 702 (size 120)
+Memory allocation failed for Task 802 (size 170)
+Memory allocation failed for Task 902 (size 140)
+Memory allocation failed for Task 1002 (size 40)
+Memory allocation failed for Task 1102 (size 40)
+Memory allocation failed for Task 1202 (size 30)
+Memory allocation failed for Task 1302 (size 55)
+Memory allocation failed for Task 1403 (size 40)
+Memory allocation failed for Task 1404 (size 35)
+Memory allocation failed for Task 1502 (size 40)
+Memory allocation failed for Task 104 (size 50)
+Memory allocation failed for Task 103 (size 35)
+Memory allocation failed for Task 203 (size 35)
+Memory allocation failed for Task 303 (size 35)
+Memory allocation failed for Task 403 (size 35)
+Memory allocation failed for Task 503 (size 35)
+Memory allocation failed for Task 603 (size 35)
+Memory allocation failed for Task 703 (size 125)
+Memory allocation failed for Task 803 (size 160)
+Memory allocation failed for Task 903 (size 65)
+Memory allocation failed for Task 1003 (size 35)
+Memory allocation failed for Task 1103 (size 35)
+Task 1203 allocated 25 units at Floor Index 475-499 (Best Fit)
+[148ms] [MEMORY] [ALLOCATE] Task 1203 (User: User3) allocated 25 units at address 475
+Memory allocation failed for Task 1303 (size 50)
+Memory allocation failed for Task 1503 (size 40)
+Memory allocation failed for Task 304 (size 30)
+Memory allocation failed for Task 404 (size 30)
+Memory allocation failed for Task 504 (size 30)
+Memory allocation failed for Task 604 (size 30)
+Memory allocation failed for Task 704 (size 120)
+Memory allocation failed for Task 804 (size 120)
+Memory allocation failed for Task 904 (size 120)
+Memory allocation failed for Task 1004 (size 30)
+Memory allocation failed for Task 1204 (size 20)
+Memory allocation failed for Task 1304 (size 45)
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[152ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[160ms] [SCHEDULER] [SELECT] Task 102 selected (Priority: 1)
+[161ms] [SCHEDULER] [SELECT] Task 101 selected (Priority: 1)
+[163ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 101
+[163ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 102
+[164ms] [TASK] [AISLE_REQUEST] Task 102 requesting Aisle 3
+[163ms] [SCHEDULER] [SELECT] Task 201 selected (Priority: 1)
+[164ms] [SCHEDULER] [SELECT] Task 304 selected (Priority: 2)
+[164ms] [SCHEDULER] [SELECT] Task 503 selected (Priority: 1)
+[164ms] [SCHEDULER] [SELECT] Task 404 selected (Priority: 1)
+[168ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 404
+[169ms] [TASK] [AISLE_REQUEST] Task 404 requesting Aisle 2
+[164ms] [TASK] [AISLE_REQUEST] Task 101 requesting Aisle 1
+[164ms] [SCHEDULER] [SELECT] Task 403 selected (Priority: 1)
+[173ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 403
+[163ms] [SCHEDULER] [SELECT] Task 202 selected (Priority: 1)
+[174ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 202
+[176ms] [TASK] [AISLE_REQUEST] Task 202 requesting Aisle 2
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 102 on Aisle 3...
+[174ms] [TASK] [AISLE_REQUEST] Task 403 requesting Aisle 2
+[167ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 503
+[166ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 304
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 404 on Aisle 2...
+[2ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 404
+[166ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 201
+[178ms] [TASK] [AISLE_REQUEST] Task 304 requesting Aisle 2
+[178ms] [TASK] [AISLE_REQUEST] Task 503 requesting Aisle 3
+[1ms] CONCURRENCY: Banker's Algorithm checking for Task 403 on Aisle 2...
+[1ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 102
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 202 on Aisle 2...
+[6ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 202
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 101 on Aisle 1...
+[8ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 101
+[0ms] CONCURRENCY: Task 202 requesting Aisle 2
+[0ms] CONCURRENCY: Task 102 requesting Aisle 3
+[4ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 403
+[3ms] CONCURRENCY: Banker's Algorithm checking for Task 503 on Aisle 3...
+[3ms] CONCURRENCY: Banker's Algorithm checking for Task 304 on Aisle 2...
+[179ms] [TASK] [AISLE_REQUEST] Task 201 requesting Aisle 2
+[0ms] CONCURRENCY: Task 404 requesting Aisle 2
+[12ms] CONCURRENCY: Banker's Algorithm checking for Task 201 on Aisle 2...
+[12ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 304 may wait
+[11ms] CONCURRENCY: Aisle 3 locked, but no circular wait - Task 503 may wait
+[1ms] CONCURRENCY: Task 403 requesting Aisle 2
+[1ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 102
+[1ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 202
+[187ms] [CONCURRENCY] [ACQUIRE] Task 202 acquired Aisle 2 semaphore
+[0ms] CONCURRENCY: Task 101 requesting Aisle 1
+[186ms] [CONCURRENCY] [ACQUIRE] Task 102 acquired Aisle 3 semaphore
+[185ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 503
+[183ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 304
+[13ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 201 may wait
+[178ms] [TASK_TERMINATE] Task 503 completed for user User3 (Wait: -1777297490343ms, Turnaround: 117ms)
+[178ms] [TASK_TERMINATE] Task 304 completed for user User4 (Wait: -1777297490339ms, Turnaround: 125ms)
+[193ms] [DISK] [PATH] Task 202 using TIE algorithm
+[192ms] [DISK] [PATH] Task 102 using TIE algorithm
+[198ms] [DISK] [EXECUTE] Task 102 executed disk I/O - seek distance: 50
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 101
+[198ms] [MEMORY] [LRU_ACCESS] Task 102 LRU updated
+[198ms] [DISK] [EXECUTE] Task 202 executed disk I/O - seek distance: 50
+[197ms] [SCHEDULER] [SELECT] Task 704 selected (Priority: 2)
+[197ms] [SCHEDULER] [SELECT] Task 1003 selected (Priority: 1)
+[197ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 201
+[199ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1003
+[199ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 704
+[200ms] [TASK] [AISLE_REQUEST] Task 704 requesting Aisle 7
+[16ms] CONCURRENCY: Banker's Algorithm checking for Task 704 on Aisle 7...
+[17ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 704
+[199ms] [MEMORY] [LRU_ACCESS] Task 202 LRU updated
+[198ms] [CONCURRENCY] [ACQUIRE] Task 101 acquired Aisle 1 semaphore
+[201ms] [DISK] [PATH] Task 101 using TIE algorithm
+[0ms] CONCURRENCY: Task 704 requesting Aisle 7
+[200ms] [TASK] [AISLE_REQUEST] Task 1003 requesting Aisle 3
+[18ms] CONCURRENCY: Banker's Algorithm checking for Task 1003 on Aisle 3...
+[182ms] [TASK_TERMINATE] Task 201 completed for user User1 (Wait: -1777297490335ms, Turnaround: 135ms)
+[19ms] CONCURRENCY: Aisle 3 locked, but no circular wait - Task 1003 may wait
+[1ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 704
+[202ms] [DISK] [EXECUTE] Task 101 executed disk I/O - seek distance: 50
+[203ms] [CONCURRENCY] [ACQUIRE] Task 704 acquired Aisle 7 semaphore
+[203ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1003
+[203ms] [SCHEDULER] [SELECT] Task 301 selected (Priority: 1)
+[186ms] [TASK_TERMINATE] Task 1003 completed for user User3 (Wait: -1777297490357ms, Turnaround: 117ms)
+[204ms] [DISK] [PATH] Task 704 using TIE algorithm
+[204ms] [MEMORY] [LRU_ACCESS] Task 101 LRU updated
+[205ms] [DISK] [EXECUTE] Task 704 executed disk I/O - seek distance: 50
+[205ms] [MEMORY] [LRU_ACCESS] Task 704 LRU updated
+[205ms] [SCHEDULER] [SELECT] Task 103 selected (Priority: 2)
+[205ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 301
+[207ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 103
+[208ms] [TASK] [AISLE_REQUEST] Task 301 requesting Aisle 1
+[208ms] [TASK] [AISLE_REQUEST] Task 103 requesting Aisle 5
+[20ms] CONCURRENCY: Banker's Algorithm checking for Task 301 on Aisle 1...
+[20ms] CONCURRENCY: Banker's Algorithm checking for Task 103 on Aisle 5...
+[22ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 103
+[0ms] CONCURRENCY: Task 103 requesting Aisle 5
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 103
+[21ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 301 may wait
+[210ms] [CONCURRENCY] [ACQUIRE] Task 103 acquired Aisle 5 semaphore
+[210ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 301
+[210ms] [DISK] [PATH] Task 103 using TIE algorithm
+[212ms] [DISK] [EXECUTE] Task 103 executed disk I/O - seek distance: 50
+[214ms] [MEMORY] [LRU_ACCESS] Task 103 LRU updated
+[212ms] [TASK] [EXECUTE] Task 202 executing for 10ms
+[192ms] [TASK_TERMINATE] Task 301 completed for user User1 (Wait: -1777297490337ms, Turnaround: 143ms)
+[4ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 404
+[216ms] [CONCURRENCY] [ACQUIRE] Task 404 acquired Aisle 2 semaphore
+[4ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 202
+[213ms] [TASK] [EXECUTE] Task 102 executing for 12ms
+[2ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 102
+[217ms] [TASK] [EXECUTE] Task 704 executing for 9ms
+[217ms] [TASK] [EXECUTE] Task 101 executing for 10ms
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 101
+[217ms] [CONCURRENCY] [RELEASE] Task 202 released Aisle 2
+[216ms] [DISK] [PATH] Task 404 using TIE algorithm
+[214ms] [SCHEDULER] [SELECT] Task 401 selected (Priority: 1)
+[221ms] [DISK] [EXECUTE] Task 404 executed disk I/O - seek distance: 50
+[220ms] [MEMORY] [DEALLOCATE] Task 202 deallocated memory
+[220ms] [CONCURRENCY] [RELEASE] Task 101 released Aisle 1
+[2ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 704
+[219ms] [CONCURRENCY] [RELEASE] Task 102 released Aisle 3
+[222ms] [CONCURRENCY] [RELEASE] Task 704 released Aisle 7
+[223ms] [MEMORY] [DEALLOCATE] Task 704 deallocated memory
+[205ms] [TASK_TERMINATE] Task 704 completed for user User4 (Wait: 120ms, Turnaround: 143ms)
+Memory for Task 101 deallocated (40 units freed)
+[204ms] [TASK_TERMINATE] Task 202 completed for user User2 (Wait: 114ms, Turnaround: 156ms)
+[221ms] [MEMORY] [LRU_ACCESS] Task 404 LRU updated
+[221ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 401
+[226ms] [MEMORY] [DEALLOCATE] Task 101 deallocated memory
+[231ms] [TASK] [COMPLETE] Task 202 completed (Wait: 114ms, Turnaround: 156ms)
+[226ms] [TASK] [EXECUTE] Task 103 executing for 9ms
+[223ms] [MEMORY] [DEALLOCATE] Task 102 deallocated memory
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 103
+[231ms] [SCHEDULER] [SELECT] Task 302 selected (Priority: 1)
+[213ms] [TASK_TERMINATE] Task 101 completed for user User1 (Wait: 126ms, Turnaround: 175ms)
+[231ms] [TASK] [COMPLETE] Task 704 completed (Wait: 120ms, Turnaround: 143ms)
+[230ms] [TASK] [AISLE_REQUEST] Task 401 requesting Aisle 1
+[24ms] CONCURRENCY: Banker's Algorithm checking for Task 401 on Aisle 1...
+[234ms] [SCHEDULER] [SELECT] Task 804 selected (Priority: 2)
+[233ms] [TASK] [COMPLETE] Task 101 completed (Wait: 126ms, Turnaround: 175ms)
+[233ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 302
+[233ms] [CONCURRENCY] [RELEASE] Task 103 released Aisle 5
+[214ms] [TASK_TERMINATE] Task 102 completed for user User2 (Wait: 115ms, Turnaround: 167ms)
+[236ms] [MEMORY] [DEALLOCATE] Task 103 deallocated memory
+[236ms] [SCHEDULER] [SELECT] Task 701 selected (Priority: 1)
+[236ms] [TASK] [AISLE_REQUEST] Task 302 requesting Aisle 2
+[235ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 804
+[25ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 401
+[241ms] [TASK] [AISLE_REQUEST] Task 804 requesting Aisle 7
+[241ms] [TASK] [EXECUTE] Task 404 executing for 10ms
+[25ms] CONCURRENCY: Banker's Algorithm checking for Task 302 on Aisle 2...
+[240ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 701
+[222ms] [TASK_TERMINATE] Task 103 completed for user User3 (Wait: 144ms, Turnaround: 175ms)
+[239ms] [TASK] [COMPLETE] Task 102 completed (Wait: 115ms, Turnaround: 167ms)
+[242ms] [TASK] [COMPLETE] Task 103 completed (Wait: 144ms, Turnaround: 175ms)
+[241ms] [TASK] [AISLE_REQUEST] Task 701 requesting Aisle 1
+[27ms] CONCURRENCY: Banker's Algorithm checking for Task 701 on Aisle 1...
+[28ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 701
+[3ms] CONCURRENCY: Task 701 requesting Aisle 1
+[4ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 701
+[27ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 302 may wait
+[6ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 403
+[6ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 404
+[26ms] CONCURRENCY: Banker's Algorithm checking for Task 804 on Aisle 7...
+[31ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 804
+[3ms] CONCURRENCY: Task 804 requesting Aisle 7
+[3ms] CONCURRENCY: Task 401 requesting Aisle 1
+[4ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 804
+[243ms] [CONCURRENCY] [RELEASE] Task 404 released Aisle 2
+[243ms] [CONCURRENCY] [ACQUIRE] Task 403 acquired Aisle 2 semaphore
+[243ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 302
+[243ms] [CONCURRENCY] [ACQUIRE] Task 701 acquired Aisle 1 semaphore
+[242ms] [SCHEDULER] [SELECT] Task 203 selected (Priority: 2)
+[242ms] [SCHEDULER] [SELECT] Task 402 selected (Priority: 1)
+[251ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 203
+[251ms] [DISK] [PATH] Task 701 using TIE algorithm
+[232ms] [TASK_TERMINATE] Task 302 completed for user User2 (Wait: -1777297490337ms, Turnaround: 183ms)
+[245ms] [DISK] [PATH] Task 403 using TIE algorithm
+[245ms] [MEMORY] [DEALLOCATE] Task 404 deallocated memory
+[244ms] [CONCURRENCY] [ACQUIRE] Task 804 acquired Aisle 7 semaphore
+[234ms] [TASK_TERMINATE] Task 404 completed for user User4 (Wait: 108ms, Turnaround: 181ms)
+[252ms] [DISK] [EXECUTE] Task 403 executed disk I/O - seek distance: 50
+[252ms] [SCHEDULER] [SELECT] Task 502 selected (Priority: 1)
+[253ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 502
+[254ms] [TASK] [AISLE_REQUEST] Task 502 requesting Aisle 1
+[252ms] [DISK] [EXECUTE] Task 701 executed disk I/O - seek distance: 50
+[251ms] [TASK] [AISLE_REQUEST] Task 203 requesting Aisle 2
+[32ms] CONCURRENCY: Banker's Algorithm checking for Task 203 on Aisle 2...
+[251ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 402
+[33ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 203 may wait
+[254ms] [MEMORY] [LRU_ACCESS] Task 701 LRU updated
+[32ms] CONCURRENCY: Banker's Algorithm checking for Task 502 on Aisle 1...
+[253ms] [MEMORY] [LRU_ACCESS] Task 403 LRU updated
+[253ms] [TASK] [COMPLETE] Task 404 completed (Wait: 108ms, Turnaround: 181ms)
+[253ms] [DISK] [PATH] Task 804 using TIE algorithm
+[256ms] [SCHEDULER] [SELECT] Task 904 selected (Priority: 2)
+[35ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 502 may wait
+[254ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 203
+[254ms] [TASK] [AISLE_REQUEST] Task 402 requesting Aisle 1
+[239ms] [TASK_TERMINATE] Task 203 completed for user User3 (Wait: -1777297490336ms, Turnaround: 191ms)
+[257ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 502
+[256ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 904
+[256ms] [DISK] [EXECUTE] Task 804 executed disk I/O - seek distance: 50
+[258ms] [TASK] [AISLE_REQUEST] Task 904 requesting Aisle 7
+[36ms] CONCURRENCY: Banker's Algorithm checking for Task 904 on Aisle 7...
+[239ms] [TASK_TERMINATE] Task 502 completed for user User2 (Wait: -1777297490342ms, Turnaround: 185ms)
+[257ms] [SCHEDULER] [SELECT] Task 303 selected (Priority: 2)
+[36ms] CONCURRENCY: Banker's Algorithm checking for Task 402 on Aisle 1...
+[262ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 303
+[262ms] [SCHEDULER] [SELECT] Task 702 selected (Priority: 1)
+[37ms] CONCURRENCY: Aisle 7 locked, but no circular wait - Task 904 may wait
+[258ms] [MEMORY] [LRU_ACCESS] Task 804 LRU updated
+[263ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 904
+[263ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 702
+[263ms] [TASK] [AISLE_REQUEST] Task 303 requesting Aisle 1
+[39ms] CONCURRENCY: Banker's Algorithm checking for Task 303 on Aisle 1...
+[38ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 402 may wait
+[40ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 303 may wait
+[264ms] [TASK] [AISLE_REQUEST] Task 702 requesting Aisle 3
+[246ms] [TASK_TERMINATE] Task 904 completed for user User4 (Wait: -1777297490354ms, Turnaround: 180ms)
+[42ms] CONCURRENCY: Banker's Algorithm checking for Task 702 on Aisle 3...
+[265ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 303
+[265ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 402
+[248ms] [TASK_TERMINATE] Task 303 completed for user User3 (Wait: -1777297490338ms, Turnaround: 198ms)
+[43ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 702
+[3ms] CONCURRENCY: Task 702 requesting Aisle 3
+[4ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 702
+[266ms] [TASK] [EXECUTE] Task 701 executing for 10ms
+[265ms] [SCHEDULER] [SELECT] Task 1004 selected (Priority: 2)
+[6ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 401
+[268ms] [CONCURRENCY] [ACQUIRE] Task 401 acquired Aisle 1 semaphore
+[6ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 701
+[267ms] [CONCURRENCY] [ACQUIRE] Task 702 acquired Aisle 3 semaphore
+[267ms] [TASK] [EXECUTE] Task 403 executing for 11ms
+[266ms] [SCHEDULER] [SELECT] Task 703 selected (Priority: 2)
+[248ms] [TASK_TERMINATE] Task 402 completed for user User2 (Wait: -1777297490340ms, Turnaround: 196ms)
+[268ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 703
+[8ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 403
+[268ms] [DISK] [PATH] Task 702 using TIE algorithm
+[268ms] [CONCURRENCY] [RELEASE] Task 701 released Aisle 1
+[268ms] [DISK] [PATH] Task 401 using TIE algorithm
+[267ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1004
+[271ms] [DISK] [EXECUTE] Task 401 executed disk I/O - seek distance: 50
+Memory for Task 701 deallocated (130 units freed)
+[270ms] [DISK] [EXECUTE] Task 702 executed disk I/O - seek distance: 50
+[270ms] [CONCURRENCY] [RELEASE] Task 403 released Aisle 2
+[270ms] [TASK] [AISLE_REQUEST] Task 703 requesting Aisle 5
+[44ms] CONCURRENCY: Banker's Algorithm checking for Task 703 on Aisle 5...
+[45ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 703
+[270ms] [SCHEDULER] [SELECT] Task 802 selected (Priority: 1)
+[3ms] CONCURRENCY: Task 703 requesting Aisle 5
+[273ms] [TASK] [EXECUTE] Task 804 executing for 8ms
+[272ms] [MEMORY] [DEALLOCATE] Task 403 deallocated memory
+[271ms] [MEMORY] [LRU_ACCESS] Task 702 LRU updated
+[271ms] [MEMORY] [DEALLOCATE] Task 701 deallocated memory
+[271ms] [MEMORY] [LRU_ACCESS] Task 401 LRU updated
+[271ms] [TASK] [AISLE_REQUEST] Task 1004 requesting Aisle 4
+[256ms] [TASK_TERMINATE] Task 701 completed for user User1 (Wait: 165ms, Turnaround: 197ms)
+[255ms] [TASK_TERMINATE] Task 403 completed for user User3 (Wait: 111ms, Turnaround: 202ms)
+[5ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 804
+[4ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 703
+[273ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 802
+[275ms] [CONCURRENCY] [ACQUIRE] Task 703 acquired Aisle 5 semaphore
+[275ms] [CONCURRENCY] [RELEASE] Task 804 released Aisle 7
+[275ms] [TASK] [COMPLETE] Task 403 completed (Wait: 111ms, Turnaround: 202ms)
+[274ms] [TASK] [COMPLETE] Task 701 completed (Wait: 165ms, Turnaround: 197ms)
+[46ms] CONCURRENCY: Banker's Algorithm checking for Task 1004 on Aisle 4...
+[276ms] [SCHEDULER] [SELECT] Task 801 selected (Priority: 1)
+[276ms] [SCHEDULER] [SELECT] Task 803 selected (Priority: 2)
+[275ms] [MEMORY] [DEALLOCATE] Task 804 deallocated memory
+[275ms] [DISK] [PATH] Task 703 using TIE algorithm
+[277ms] [DISK] [EXECUTE] Task 703 executed disk I/O - seek distance: 50
+[275ms] [TASK] [AISLE_REQUEST] Task 802 requesting Aisle 3
+[47ms] CONCURRENCY: Banker's Algorithm checking for Task 802 on Aisle 3...
+[48ms] CONCURRENCY: Aisle 3 locked, but no circular wait - Task 802 may wait
+[277ms] [MEMORY] [LRU_ACCESS] Task 703 LRU updated
+[258ms] [TASK_TERMINATE] Task 804 completed for user User4 (Wait: 162ms, Turnaround: 194ms)
+[276ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 803
+[276ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 801
+[47ms] CONCURRENCY: SAFE STATE - Aisle 4 is available for Task 1004
+[279ms] [TASK] [AISLE_REQUEST] Task 801 requesting Aisle 1
+[279ms] [TASK] [AISLE_REQUEST] Task 803 requesting Aisle 5
+[279ms] [TASK] [COMPLETE] Task 804 completed (Wait: 162ms, Turnaround: 194ms)
+[278ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 802
+[280ms] [SCHEDULER] [SELECT] Task 1204 selected (Priority: 2)
+[50ms] CONCURRENCY: Banker's Algorithm checking for Task 803 on Aisle 5...
+[50ms] CONCURRENCY: Banker's Algorithm checking for Task 801 on Aisle 1...
+[0ms] CONCURRENCY: Task 1004 requesting Aisle 4
+[52ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 801 may wait
+[51ms] CONCURRENCY: Aisle 5 locked, but no circular wait - Task 803 may wait
+[281ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1204
+[262ms] [TASK_TERMINATE] Task 802 completed for user User2 (Wait: -1777297490351ms, Turnaround: 199ms)
+[281ms] [TASK] [AISLE_REQUEST] Task 1204 requesting Aisle 7
+[54ms] CONCURRENCY: Banker's Algorithm checking for Task 1204 on Aisle 7...
+[281ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 803
+[281ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 801
+[1ms] CONCURRENCY: Aisle 4 Semaphore ACQUIRED by Task 1004
+[264ms] [TASK_TERMINATE] Task 801 completed for user User1 (Wait: -1777297490351ms, Turnaround: 201ms)
+[264ms] [TASK_TERMINATE] Task 803 completed for user User3 (Wait: -1777297490352ms, Turnaround: 200ms)
+[55ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 1204
+[282ms] [SCHEDULER] [SELECT] Task 902 selected (Priority: 1)
+[6ms] CONCURRENCY: Task 1204 requesting Aisle 7
+[283ms] [SCHEDULER] [SELECT] Task 903 selected (Priority: 2)
+[282ms] [SCHEDULER] [SELECT] Task 901 selected (Priority: 1)
+[282ms] [CONCURRENCY] [ACQUIRE] Task 1004 acquired Aisle 4 semaphore
+[283ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 901
+[283ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 903
+[7ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 1204
+[283ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 902
+[284ms] [CONCURRENCY] [ACQUIRE] Task 1204 acquired Aisle 7 semaphore
+[284ms] [TASK] [AISLE_REQUEST] Task 903 requesting Aisle 5
+[284ms] [TASK] [AISLE_REQUEST] Task 901 requesting Aisle 1
+[284ms] [DISK] [PATH] Task 1004 using TIE algorithm
+[56ms] CONCURRENCY: Banker's Algorithm checking for Task 901 on Aisle 1...
+[56ms] CONCURRENCY: Banker's Algorithm checking for Task 903 on Aisle 5...
+[285ms] [DISK] [PATH] Task 1204 using TIE algorithm
+[285ms] [TASK] [EXECUTE] Task 702 executing for 11ms
+[284ms] [TASK] [AISLE_REQUEST] Task 902 requesting Aisle 3
+[5ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 702
+[285ms] [DISK] [EXECUTE] Task 1204 executed disk I/O - seek distance: 50
+[58ms] CONCURRENCY: Aisle 5 locked, but no circular wait - Task 903 may wait
+[57ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 901 may wait
+[285ms] [DISK] [EXECUTE] Task 1004 executed disk I/O - seek distance: 50
+[287ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 901
+[287ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 903
+[287ms] [TASK] [EXECUTE] Task 401 executing for 13ms
+[8ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 401
+[286ms] [MEMORY] [LRU_ACCESS] Task 1204 LRU updated
+[286ms] [CONCURRENCY] [RELEASE] Task 702 released Aisle 3
+[58ms] CONCURRENCY: Banker's Algorithm checking for Task 902 on Aisle 3...
+[290ms] [MEMORY] [DEALLOCATE] Task 702 deallocated memory
+[289ms] [CONCURRENCY] [RELEASE] Task 401 released Aisle 1
+[270ms] [TASK_TERMINATE] Task 903 completed for user User3 (Wait: -1777297490353ms, Turnaround: 205ms)
+[269ms] [TASK_TERMINATE] Task 901 completed for user User1 (Wait: -1777297490353ms, Turnaround: 204ms)
+[287ms] [MEMORY] [LRU_ACCESS] Task 1004 LRU updated
+[290ms] [SCHEDULER] [SELECT] Task 1001 selected (Priority: 1)
+[290ms] [SCHEDULER] [SELECT] Task 1103 selected (Priority: 2)
+Memory for Task 401 deallocated (45 units freed)
+[272ms] [TASK_TERMINATE] Task 702 completed for user User2 (Wait: 187ms, Turnaround: 211ms)
+[61ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 902
+[292ms] [TASK] [EXECUTE] Task 703 executing for 12ms
+[5ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 703
+[291ms] [TASK] [COMPLETE] Task 702 completed (Wait: 187ms, Turnaround: 211ms)
+[291ms] [MEMORY] [DEALLOCATE] Task 401 deallocated memory
+[291ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1103
+[291ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1001
+[293ms] [TASK] [AISLE_REQUEST] Task 1103 requesting Aisle 4
+[275ms] [TASK_TERMINATE] Task 401 completed for user User1 (Wait: 171ms, Turnaround: 223ms)
+[292ms] [SCHEDULER] [SELECT] Task 1102 selected (Priority: 1)
+[292ms] [CONCURRENCY] [RELEASE] Task 703 released Aisle 5
+[6ms] CONCURRENCY: Task 902 requesting Aisle 3
+[294ms] [MEMORY] [DEALLOCATE] Task 703 deallocated memory
+[294ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1102
+[293ms] [TASK] [COMPLETE] Task 401 completed (Wait: 171ms, Turnaround: 223ms)
+[62ms] CONCURRENCY: Banker's Algorithm checking for Task 1103 on Aisle 4...
+[293ms] [TASK] [AISLE_REQUEST] Task 1001 requesting Aisle 1
+[63ms] CONCURRENCY: Aisle 4 locked, but no circular wait - Task 1103 may wait
+[295ms] [TASK] [EXECUTE] Task 1204 executing for 5ms
+[294ms] [SCHEDULER] [SELECT] Task 1101 selected (Priority: 1)
+[294ms] [TASK] [AISLE_REQUEST] Task 1102 requesting Aisle 2
+[276ms] [TASK_TERMINATE] Task 703 completed for user User3 (Wait: 194ms, Turnaround: 215ms)
+[7ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 902
+[295ms] [TASK] [COMPLETE] Task 703 completed (Wait: 194ms, Turnaround: 215ms)
+[64ms] CONCURRENCY: Banker's Algorithm checking for Task 1102 on Aisle 2...
+[295ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1101
+[297ms] [TASK] [AISLE_REQUEST] Task 1101 requesting Aisle 2
+[65ms] CONCURRENCY: Banker's Algorithm checking for Task 1101 on Aisle 2...
+[66ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 1101
+[8ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 1204
+[295ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1103
+[281ms] [TASK_TERMINATE] Task 1103 completed for user User3 (Wait: -1777297490359ms, Turnaround: 210ms)
+[63ms] CONCURRENCY: Banker's Algorithm checking for Task 1001 on Aisle 1...
+[68ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1001
+[299ms] [SCHEDULER] [SELECT] Task 1303 selected (Priority: 2)
+[299ms] [CONCURRENCY] [RELEASE] Task 1204 released Aisle 7
+[9ms] CONCURRENCY: Task 1101 requesting Aisle 2
+[10ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 1101
+[65ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 1102
+[11ms] CONCURRENCY: Task 1102 requesting Aisle 2
+[296ms] [SCHEDULER] [SELECT] Task 1203 selected (Priority: 2)
+[301ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1203
+[296ms] [CONCURRENCY] [ACQUIRE] Task 902 acquired Aisle 3 semaphore
+[302ms] [TASK] [AISLE_REQUEST] Task 1203 requesting Aisle 5
+[300ms] [CONCURRENCY] [ACQUIRE] Task 1101 acquired Aisle 2 semaphore
+[300ms] [MEMORY] [DEALLOCATE] Task 1204 deallocated memory
+[300ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1303
+[9ms] CONCURRENCY: Task 1001 requesting Aisle 1
+[300ms] [TASK] [EXECUTE] Task 1004 executing for 9ms
+[10ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1001
+[303ms] [TASK] [AISLE_REQUEST] Task 1303 requesting Aisle 8
+[285ms] [TASK_TERMINATE] Task 1204 completed for user User4 (Wait: 192ms, Turnaround: 212ms)
+[303ms] [DISK] [PATH] Task 1101 using TIE algorithm
+[70ms] CONCURRENCY: Banker's Algorithm checking for Task 1203 on Aisle 5...
+[71ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 1203
+[302ms] [DISK] [PATH] Task 902 using TIE algorithm
+[6ms] CONCURRENCY: Task 1203 requesting Aisle 5
+[7ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 1203
+[305ms] [CONCURRENCY] [ACQUIRE] Task 1203 acquired Aisle 5 semaphore
+[304ms] [DISK] [EXECUTE] Task 1101 executed disk I/O - seek distance: 50
+[304ms] [TASK] [COMPLETE] Task 1204 completed (Wait: 192ms, Turnaround: 212ms)
+[70ms] CONCURRENCY: Banker's Algorithm checking for Task 1303 on Aisle 8...
+[73ms] CONCURRENCY: SAFE STATE - Aisle 8 is available for Task 1303
+[303ms] [CONCURRENCY] [ACQUIRE] Task 1001 acquired Aisle 1 semaphore
+[2ms] CONCURRENCY: Aisle 4 Semaphore RELEASED by Task 1004
+[310ms] [DISK] [PATH] Task 1001 using TIE algorithm
+[0ms] CONCURRENCY: Task 1303 requesting Aisle 8
+[309ms] [SCHEDULER] [SELECT] Task 504 selected (Priority: 3)
+[312ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 504
+[308ms] [MEMORY] [LRU_ACCESS] Task 1101 LRU updated
+[305ms] [DISK] [PATH] Task 1203 using TIE algorithm
+[304ms] [DISK] [EXECUTE] Task 902 executed disk I/O - seek distance: 50
+[313ms] [MEMORY] [LRU_ACCESS] Task 902 LRU updated
+[313ms] [DISK] [EXECUTE] Task 1203 executed disk I/O - seek distance: 50
+[312ms] [TASK] [AISLE_REQUEST] Task 504 requesting Aisle 6
+[1ms] CONCURRENCY: Aisle 8 Semaphore ACQUIRED by Task 1303
+[311ms] [DISK] [EXECUTE] Task 1001 executed disk I/O - seek distance: 50
+[311ms] [CONCURRENCY] [RELEASE] Task 1004 released Aisle 4
+[315ms] [MEMORY] [LRU_ACCESS] Task 1001 LRU updated
+[314ms] [CONCURRENCY] [ACQUIRE] Task 1303 acquired Aisle 8 semaphore
+[74ms] CONCURRENCY: Banker's Algorithm checking for Task 504 on Aisle 6...
+[315ms] [DISK] [PATH] Task 1303 using TIE algorithm
+[314ms] [MEMORY] [LRU_ACCESS] Task 1203 LRU updated
+[316ms] [DISK] [EXECUTE] Task 1303 executed disk I/O - seek distance: 50
+[75ms] CONCURRENCY: SAFE STATE - Aisle 6 is available for Task 504
+[315ms] [MEMORY] [DEALLOCATE] Task 1004 deallocated memory
+[0ms] CONCURRENCY: Task 504 requesting Aisle 6
+[316ms] [MEMORY] [LRU_ACCESS] Task 1303 LRU updated
+[1ms] CONCURRENCY: Aisle 6 Semaphore ACQUIRED by Task 504
+[298ms] [TASK_TERMINATE] Task 1004 completed for user User4 (Wait: 192ms, Turnaround: 228ms)
+[317ms] [CONCURRENCY] [ACQUIRE] Task 504 acquired Aisle 6 semaphore
+[318ms] [TASK] [COMPLETE] Task 1004 completed (Wait: 192ms, Turnaround: 228ms)
+[318ms] [DISK] [PATH] Task 504 using TIE algorithm
+[318ms] [SCHEDULER] [SELECT] Task 604 selected (Priority: 3)
+[318ms] [DISK] [EXECUTE] Task 504 executed disk I/O - seek distance: 50
+[318ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 604
+[321ms] [TASK] [EXECUTE] Task 1203 executing for 4ms
+[319ms] [MEMORY] [LRU_ACCESS] Task 504 LRU updated
+[8ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 1203
+[321ms] [TASK] [AISLE_REQUEST] Task 604 requesting Aisle 7
+[322ms] [CONCURRENCY] [RELEASE] Task 1203 released Aisle 5
+Memory for Task 1203 deallocated (25 units freed)
+[76ms] CONCURRENCY: Banker's Algorithm checking for Task 604 on Aisle 7...
+[323ms] [MEMORY] [DEALLOCATE] Task 1203 deallocated memory
+[77ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 604
+[305ms] [TASK_TERMINATE] Task 1203 completed for user User3 (Wait: 213ms, Turnaround: 232ms)
+[9ms] CONCURRENCY: Task 604 requesting Aisle 7
+[324ms] [TASK] [COMPLETE] Task 1203 completed (Wait: 213ms, Turnaround: 232ms)
+[10ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 604
+[324ms] [SCHEDULER] [SELECT] Task 603 selected (Priority: 3)
+[324ms] [CONCURRENCY] [ACQUIRE] Task 604 acquired Aisle 7 semaphore
+[324ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 603
+[324ms] [DISK] [PATH] Task 604 using TIE algorithm
+[325ms] [TASK] [AISLE_REQUEST] Task 603 requesting Aisle 5
+[325ms] [DISK] [EXECUTE] Task 604 executed disk I/O - seek distance: 50
+[78ms] CONCURRENCY: Banker's Algorithm checking for Task 603 on Aisle 5...
+[325ms] [MEMORY] [LRU_ACCESS] Task 604 LRU updated
+[79ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 603
+[326ms] [TASK] [EXECUTE] Task 1001 executing for 10ms
+[9ms] CONCURRENCY: Task 603 requesting Aisle 5
+[11ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1001
+[10ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 603
+[326ms] [CONCURRENCY] [RELEASE] Task 1001 released Aisle 1
+[326ms] [CONCURRENCY] [ACQUIRE] Task 603 acquired Aisle 5 semaphore
+Memory for Task 1001 deallocated (45 units freed)
+[327ms] [DISK] [PATH] Task 603 using TIE algorithm
+[327ms] [MEMORY] [DEALLOCATE] Task 1001 deallocated memory
+[327ms] [DISK] [EXECUTE] Task 603 executed disk I/O - seek distance: 50
+[331ms] [TASK] [EXECUTE] Task 902 executing for 14ms
+[8ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 902
+[309ms] [TASK_TERMINATE] Task 1001 completed for user User1 (Wait: 214ms, Turnaround: 241ms)
+[332ms] [CONCURRENCY] [RELEASE] Task 902 released Aisle 3
+[332ms] [MEMORY] [LRU_ACCESS] Task 603 LRU updated
+[332ms] [MEMORY] [DEALLOCATE] Task 902 deallocated memory
+[332ms] [TASK] [COMPLETE] Task 1001 completed (Wait: 214ms, Turnaround: 241ms)
+[315ms] [TASK_TERMINATE] Task 902 completed for user User2 (Wait: 209ms, Turnaround: 250ms)
+[333ms] [SCHEDULER] [SELECT] Task 1201 selected (Priority: 1)
+[333ms] [TASK] [COMPLETE] Task 902 completed (Wait: 209ms, Turnaround: 250ms)
+[333ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1201
+[334ms] [SCHEDULER] [SELECT] Task 1202 selected (Priority: 1)
+[337ms] [TASK] [EXECUTE] Task 504 executing for 13ms
+[2ms] CONCURRENCY: Aisle 6 Semaphore RELEASED by Task 504
+[337ms] [TASK] [EXECUTE] Task 1303 executing for 15ms
+[334ms] [TASK] [AISLE_REQUEST] Task 1201 requesting Aisle 1
+[2ms] CONCURRENCY: Aisle 8 Semaphore RELEASED by Task 1303
+[341ms] [CONCURRENCY] [RELEASE] Task 504 released Aisle 6
+[339ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1202
+[343ms] [MEMORY] [DEALLOCATE] Task 504 deallocated memory
+[342ms] [CONCURRENCY] [RELEASE] Task 1303 released Aisle 8
+[343ms] [MEMORY] [DEALLOCATE] Task 1303 deallocated memory
+[80ms] CONCURRENCY: Banker's Algorithm checking for Task 1201 on Aisle 1...
+[326ms] [TASK_TERMINATE] Task 1303 completed for user User3 (Wait: 218ms, Turnaround: 252ms)
+[346ms] [TASK] [EXECUTE] Task 604 executing for 19ms
+[325ms] [TASK_TERMINATE] Task 504 completed for user User4 (Wait: 243ms, Turnaround: 270ms)
+[347ms] [TASK] [COMPLETE] Task 504 completed (Wait: 243ms, Turnaround: 270ms)
+[348ms] [SCHEDULER] [SELECT] Task 1304 selected (Priority: 3)
+[348ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1304
+[349ms] [TASK] [AISLE_REQUEST] Task 1304 requesting Aisle 8
+[81ms] CONCURRENCY: Banker's Algorithm checking for Task 1304 on Aisle 8...
+[82ms] CONCURRENCY: SAFE STATE - Aisle 8 is available for Task 1304
+[343ms] [TASK] [AISLE_REQUEST] Task 1202 requesting Aisle 3
+[3ms] CONCURRENCY: Task 1304 requesting Aisle 8
+[351ms] [TASK] [EXECUTE] Task 603 executing for 17ms
+[348ms] [TASK] [EXECUTE] Task 1101 executing for 35ms
+[11ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 604
+[346ms] [TASK] [COMPLETE] Task 1303 completed (Wait: 218ms, Turnaround: 252ms)
+[81ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1201
+[355ms] [SCHEDULER] [SELECT] Task 1503 selected (Priority: 3)
+[355ms] [CONCURRENCY] [RELEASE] Task 604 released Aisle 7
+[359ms] [MEMORY] [DEALLOCATE] Task 604 deallocated memory
+[12ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 1102
+[12ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 1101
+[11ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 603
+[4ms] CONCURRENCY: Aisle 8 Semaphore ACQUIRED by Task 1304
+[83ms] CONCURRENCY: Banker's Algorithm checking for Task 1202 on Aisle 3...
+[359ms] [CONCURRENCY] [ACQUIRE] Task 1304 acquired Aisle 8 semaphore
+[359ms] [CONCURRENCY] [RELEASE] Task 603 released Aisle 5
+[359ms] [CONCURRENCY] [RELEASE] Task 1101 released Aisle 2
+[359ms] [CONCURRENCY] [ACQUIRE] Task 1102 acquired Aisle 2 semaphore
+[341ms] [TASK_TERMINATE] Task 604 completed for user User4 (Wait: 247ms, Turnaround: 283ms)
+[358ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1503
+[12ms] CONCURRENCY: Task 1201 requesting Aisle 1
+[360ms] [TASK] [AISLE_REQUEST] Task 1503 requesting Aisle 5
+[360ms] [TASK] [COMPLETE] Task 604 completed (Wait: 247ms, Turnaround: 283ms)
+[360ms] [DISK] [PATH] Task 1102 using TIE algorithm
+[360ms] [MEMORY] [DEALLOCATE] Task 1101 deallocated memory
+[360ms] [MEMORY] [DEALLOCATE] Task 603 deallocated memory
+[360ms] [DISK] [PATH] Task 1304 using TIE algorithm
+[85ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 1202
+[363ms] [DISK] [EXECUTE] Task 1304 executed disk I/O - seek distance: 50
+[343ms] [TASK_TERMINATE] Task 603 completed for user User3 (Wait: 251ms, Turnaround: 286ms)
+[343ms] [TASK_TERMINATE] Task 1101 completed for user User1 (Wait: 211ms, Turnaround: 273ms)
+[361ms] [DISK] [EXECUTE] Task 1102 executed disk I/O - seek distance: 50
+[85ms] CONCURRENCY: Banker's Algorithm checking for Task 1503 on Aisle 5...
+[13ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1201
+[87ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 1503
+[364ms] [MEMORY] [LRU_ACCESS] Task 1102 LRU updated
+[364ms] [TASK] [COMPLETE] Task 1101 completed (Wait: 211ms, Turnaround: 273ms)
+[364ms] [TASK] [COMPLETE] Task 603 completed (Wait: 251ms, Turnaround: 286ms)
+[363ms] [MEMORY] [LRU_ACCESS] Task 1304 LRU updated
+[9ms] CONCURRENCY: Task 1202 requesting Aisle 3
+[10ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 1202
+[366ms] [CONCURRENCY] [ACQUIRE] Task 1202 acquired Aisle 3 semaphore
+[365ms] [SCHEDULER] [SELECT] Task 1301 selected (Priority: 1)
+[12ms] CONCURRENCY: Task 1503 requesting Aisle 5
+[365ms] [CONCURRENCY] [ACQUIRE] Task 1201 acquired Aisle 1 semaphore
+[13ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 1503
+[366ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1301
+[366ms] [DISK] [PATH] Task 1202 using TIE algorithm
+[367ms] [TASK] [AISLE_REQUEST] Task 1301 requesting Aisle 6
+[367ms] [CONCURRENCY] [ACQUIRE] Task 1503 acquired Aisle 5 semaphore
+[367ms] [DISK] [PATH] Task 1201 using TIE algorithm
+[368ms] [DISK] [PATH] Task 1503 using TIE algorithm
+[88ms] CONCURRENCY: Banker's Algorithm checking for Task 1301 on Aisle 6...
+[367ms] [DISK] [EXECUTE] Task 1202 executed disk I/O - seek distance: 50
+[89ms] CONCURRENCY: SAFE STATE - Aisle 6 is available for Task 1301
+[368ms] [DISK] [EXECUTE] Task 1503 executed disk I/O - seek distance: 50
+[368ms] [DISK] [EXECUTE] Task 1201 executed disk I/O - seek distance: 50
+[368ms] [MEMORY] [LRU_ACCESS] Task 1503 LRU updated
+[3ms] CONCURRENCY: Task 1301 requesting Aisle 6
+[368ms] [MEMORY] [LRU_ACCESS] Task 1202 LRU updated
+[4ms] CONCURRENCY: Aisle 6 Semaphore ACQUIRED by Task 1301
+[369ms] [MEMORY] [LRU_ACCESS] Task 1201 LRU updated
+[369ms] [CONCURRENCY] [ACQUIRE] Task 1301 acquired Aisle 6 semaphore
+[370ms] [DISK] [PATH] Task 1301 using TIE algorithm
+[370ms] [DISK] [EXECUTE] Task 1301 executed disk I/O - seek distance: 50
+[370ms] [MEMORY] [LRU_ACCESS] Task 1301 LRU updated
+[374ms] [TASK] [EXECUTE] Task 1201 executing for 4ms
+[14ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1201
+[374ms] [CONCURRENCY] [RELEASE] Task 1201 released Aisle 1
+[374ms] [MEMORY] [DEALLOCATE] Task 1201 deallocated memory
+[356ms] [TASK_TERMINATE] Task 1201 completed for user User1 (Wait: 265ms, Turnaround: 284ms)
+[375ms] [TASK] [EXECUTE] Task 1102 executing for 8ms
+[375ms] [TASK] [EXECUTE] Task 1202 executing for 5ms
+[14ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 1102
+[375ms] [TASK] [COMPLETE] Task 1201 completed (Wait: 265ms, Turnaround: 284ms)
+[376ms] [CONCURRENCY] [RELEASE] Task 1102 released Aisle 2
+[11ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 1202
+[376ms] [MEMORY] [DEALLOCATE] Task 1102 deallocated memory
+[376ms] [SCHEDULER] [SELECT] Task 1401 selected (Priority: 1)
+[377ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1401
+[377ms] [TASK] [AISLE_REQUEST] Task 1401 requesting Aisle 1
+[90ms] CONCURRENCY: Banker's Algorithm checking for Task 1401 on Aisle 1...
+[91ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1401
+[358ms] [TASK_TERMINATE] Task 1102 completed for user User2 (Wait: 212ms, Turnaround: 287ms)
+[376ms] [CONCURRENCY] [RELEASE] Task 1202 released Aisle 3
+[378ms] [MEMORY] [DEALLOCATE] Task 1202 deallocated memory
+[377ms] [TASK] [COMPLETE] Task 1102 completed (Wait: 212ms, Turnaround: 287ms)
+[15ms] CONCURRENCY: Task 1401 requesting Aisle 1
+[378ms] [SCHEDULER] [SELECT] Task 1302 selected (Priority: 1)
+[360ms] [TASK_TERMINATE] Task 1202 completed for user User2 (Wait: 273ms, Turnaround: 288ms)
+[378ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1302
+[16ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1401
+[378ms] [TASK] [AISLE_REQUEST] Task 1302 requesting Aisle 6
+[379ms] [TASK] [EXECUTE] Task 1304 executing for 13ms
+[378ms] [TASK] [COMPLETE] Task 1202 completed (Wait: 273ms, Turnaround: 288ms)
+[5ms] CONCURRENCY: Aisle 8 Semaphore RELEASED by Task 1304
+[92ms] CONCURRENCY: Banker's Algorithm checking for Task 1302 on Aisle 6...
+[378ms] [CONCURRENCY] [ACQUIRE] Task 1401 acquired Aisle 1 semaphore
+[93ms] CONCURRENCY: Aisle 6 locked, but no circular wait - Task 1302 may wait
+[379ms] [CONCURRENCY] [RELEASE] Task 1304 released Aisle 8
+[379ms] [SCHEDULER] [SELECT] Task 1403 selected (Priority: 1)
+[380ms] [MEMORY] [DEALLOCATE] Task 1304 deallocated memory
+[380ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1302
+[362ms] [TASK_TERMINATE] Task 1302 completed for user User2 (Wait: -1777297490362ms, Turnaround: 288ms)
+[379ms] [DISK] [PATH] Task 1401 using TIE algorithm
+[381ms] [SCHEDULER] [SELECT] Task 1404 selected (Priority: 1)
+[362ms] [TASK_TERMINATE] Task 1304 completed for user User4 (Wait: 260ms, Turnaround: 287ms)
+[381ms] [TASK] [COMPLETE] Task 1304 completed (Wait: 260ms, Turnaround: 287ms)
+[380ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1403
+[381ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1404
+[381ms] [DISK] [EXECUTE] Task 1401 executed disk I/O - seek distance: 50
+[382ms] [TASK] [AISLE_REQUEST] Task 1404 requesting Aisle 2
+[382ms] [TASK] [EXECUTE] Task 1503 executing for 12ms
+[381ms] [TASK] [AISLE_REQUEST] Task 1403 requesting Aisle 1
+[14ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 1503
+[94ms] CONCURRENCY: Banker's Algorithm checking for Task 1404 on Aisle 2...
+[95ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 1404
+[382ms] [MEMORY] [LRU_ACCESS] Task 1401 LRU updated
+[15ms] CONCURRENCY: Task 1404 requesting Aisle 2
+[382ms] [CONCURRENCY] [RELEASE] Task 1503 released Aisle 5
+[383ms] [MEMORY] [DEALLOCATE] Task 1503 deallocated memory
+[94ms] CONCURRENCY: Banker's Algorithm checking for Task 1403 on Aisle 1...
+[365ms] [TASK_TERMINATE] Task 1503 completed for user User3 (Wait: 267ms, Turnaround: 285ms)
+[16ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 1404
+[384ms] [TASK] [COMPLETE] Task 1503 completed (Wait: 267ms, Turnaround: 285ms)
+[97ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 1403 may wait
+[384ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1403
+[367ms] [TASK_TERMINATE] Task 1403 completed for user User2 (Wait: -1777297490366ms, Turnaround: 288ms)
+[385ms] [SCHEDULER] [SELECT] Task 104 selected (Priority: 1)
+[385ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 104
+[386ms] [TASK] [AISLE_REQUEST] Task 104 requesting Aisle 1
+[98ms] CONCURRENCY: Banker's Algorithm checking for Task 104 on Aisle 1...
+[99ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 104 may wait
+[384ms] [CONCURRENCY] [ACQUIRE] Task 1404 acquired Aisle 2 semaphore
+[388ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 104
+[387ms] [TASK] [EXECUTE] Task 1301 executing for 16ms
+[5ms] CONCURRENCY: Aisle 6 Semaphore RELEASED by Task 1301
+[389ms] [CONCURRENCY] [RELEASE] Task 1301 released Aisle 6
+[389ms] [MEMORY] [DEALLOCATE] Task 1301 deallocated memory
+[371ms] [TASK_TERMINATE] Task 1301 completed for user User1 (Wait: 276ms, Turnaround: 297ms)
+[389ms] [TASK] [COMPLETE] Task 1301 completed (Wait: 276ms, Turnaround: 297ms)
+[391ms] [SCHEDULER] [SELECT] Task 1402 selected (Priority: 1)
+[392ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1402
+[392ms] [TASK] [AISLE_REQUEST] Task 1402 requesting Aisle 2
+[100ms] CONCURRENCY: Banker's Algorithm checking for Task 1402 on Aisle 2...
+[370ms] [TASK_TERMINATE] Task 104 completed for user User2 (Wait: -1777297490368ms, Turnaround: 290ms)
+[388ms] [DISK] [PATH] Task 1404 using TIE algorithm
+[393ms] [DISK] [EXECUTE] Task 1404 executed disk I/O - seek distance: 50
+[393ms] [SCHEDULER] [SELECT] Task 1002 selected (Priority: 2)
+[393ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1002
+[393ms] [TASK] [AISLE_REQUEST] Task 1002 requesting Aisle 2
+[101ms] CONCURRENCY: Banker's Algorithm checking for Task 1002 on Aisle 2...
+[102ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 1002 may wait
+[393ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1002
+[376ms] [TASK_TERMINATE] Task 1002 completed for user User2 (Wait: -1777297490357ms, Turnaround: 307ms)
+[101ms] CONCURRENCY: Aisle 2 locked, but no circular wait - Task 1402 may wait
+[394ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1402
+[394ms] [SCHEDULER] [SELECT] Task 1502 selected (Priority: 2)
+[393ms] [MEMORY] [LRU_ACCESS] Task 1404 LRU updated
+[394ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1502
+[394ms] [TASK] [AISLE_REQUEST] Task 1502 requesting Aisle 3
+[376ms] [TASK_TERMINATE] Task 1402 completed for user User1 (Wait: -1777297490366ms, Turnaround: 298ms)
+[104ms] CONCURRENCY: Banker's Algorithm checking for Task 1502 on Aisle 3...
+[394ms] [SCHEDULER] [SELECT] Task 1501 selected (Priority: 1)
+[394ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1501
+[394ms] [TASK] [AISLE_REQUEST] Task 1501 requesting Aisle 1
+[105ms] CONCURRENCY: Banker's Algorithm checking for Task 1501 on Aisle 1...
+[106ms] CONCURRENCY: Aisle 1 locked, but no circular wait - Task 1501 may wait
+[396ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 1501
+[105ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 1502
+[378ms] [TASK_TERMINATE] Task 1501 completed for user User1 (Wait: -1777297490367ms, Turnaround: 299ms)
+[396ms] [TASK] [EXECUTE] Task 1401 executing for 11ms
+[17ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1401
+[396ms] [SCHEDULER] [SELECT] Task 501 selected (Priority: 3)
+[12ms] CONCURRENCY: Task 1502 requesting Aisle 3
+[13ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 1502
+[396ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 501
+[397ms] [TASK] [AISLE_REQUEST] Task 501 requesting Aisle 4
+[108ms] CONCURRENCY: Banker's Algorithm checking for Task 501 on Aisle 4...
+[396ms] [CONCURRENCY] [RELEASE] Task 1401 released Aisle 1
+[398ms] [MEMORY] [DEALLOCATE] Task 1401 deallocated memory
+[109ms] CONCURRENCY: SAFE STATE - Aisle 4 is available for Task 501
+[397ms] [CONCURRENCY] [ACQUIRE] Task 1502 acquired Aisle 3 semaphore
+[3ms] CONCURRENCY: Task 501 requesting Aisle 4
+[380ms] [TASK_TERMINATE] Task 1401 completed for user User1 (Wait: 282ms, Turnaround: 303ms)
+[398ms] [TASK] [COMPLETE] Task 1401 completed (Wait: 282ms, Turnaround: 303ms)
+[399ms] [SCHEDULER] [SELECT] Task 601 selected (Priority: 3)
+[4ms] CONCURRENCY: Aisle 4 Semaphore ACQUIRED by Task 501
+[400ms] [CONCURRENCY] [ACQUIRE] Task 501 acquired Aisle 4 semaphore
+[398ms] [DISK] [PATH] Task 1502 using TIE algorithm
+[400ms] [DISK] [EXECUTE] Task 1502 executed disk I/O - seek distance: 50
+[400ms] [DISK] [PATH] Task 501 using TIE algorithm
+[400ms] [DISK] [EXECUTE] Task 501 executed disk I/O - seek distance: 50
+[400ms] [MEMORY] [LRU_ACCESS] Task 501 LRU updated
+[399ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 601
+[400ms] [MEMORY] [LRU_ACCESS] Task 1502 LRU updated
+[400ms] [TASK] [AISLE_REQUEST] Task 601 requesting Aisle 1
+[110ms] CONCURRENCY: Banker's Algorithm checking for Task 601 on Aisle 1...
+[111ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 601
+[18ms] CONCURRENCY: Task 601 requesting Aisle 1
+[19ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 601
+[401ms] [CONCURRENCY] [ACQUIRE] Task 601 acquired Aisle 1 semaphore
+[401ms] [DISK] [PATH] Task 601 using TIE algorithm
+[401ms] [DISK] [EXECUTE] Task 601 executed disk I/O - seek distance: 50
+[401ms] [MEMORY] [LRU_ACCESS] Task 601 LRU updated
+[405ms] [TASK] [EXECUTE] Task 1404 executing for 9ms
+[17ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 1404
+[405ms] [CONCURRENCY] [RELEASE] Task 1404 released Aisle 2
+[405ms] [MEMORY] [DEALLOCATE] Task 1404 deallocated memory
+[387ms] [TASK_TERMINATE] Task 1404 completed for user User2 (Wait: 286ms, Turnaround: 308ms)
+[406ms] [TASK] [COMPLETE] Task 1404 completed (Wait: 286ms, Turnaround: 308ms)
+[406ms] [SCHEDULER] [SELECT] Task 602 selected (Priority: 3)
+[406ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 602
+[406ms] [TASK] [AISLE_REQUEST] Task 602 requesting Aisle 3
+[112ms] CONCURRENCY: Banker's Algorithm checking for Task 602 on Aisle 3...
+[113ms] CONCURRENCY: Aisle 3 locked, but no circular wait - Task 602 may wait
+[407ms] [CONCURRENCY] [UNSAFE] Deadlock detected for Task 602
+[389ms] [TASK_TERMINATE] Task 602 completed for user User2 (Wait: -1777297490344ms, Turnaround: 333ms)
+[412ms] [TASK] [EXECUTE] Task 1502 executing for 11ms
+[14ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 1502
+[413ms] [CONCURRENCY] [RELEASE] Task 1502 released Aisle 3
+[413ms] [MEMORY] [DEALLOCATE] Task 1502 deallocated memory
+[395ms] [TASK_TERMINATE] Task 1502 completed for user User2 (Wait: 298ms, Turnaround: 315ms)
+[413ms] [TASK] [COMPLETE] Task 1502 completed (Wait: 298ms, Turnaround: 315ms)
+[416ms] [TASK] [EXECUTE] Task 501 executing for 14ms
+[5ms] CONCURRENCY: Aisle 4 Semaphore RELEASED by Task 501
+[416ms] [CONCURRENCY] [RELEASE] Task 501 released Aisle 4
+Memory for Task 501 deallocated (40 units freed)
+[416ms] [MEMORY] [DEALLOCATE] Task 501 deallocated memory
+[398ms] [TASK_TERMINATE] Task 501 completed for user User1 (Wait: 326ms, Turnaround: 344ms)
+[417ms] [TASK] [COMPLETE] Task 501 completed (Wait: 326ms, Turnaround: 344ms)
+[422ms] [TASK] [EXECUTE] Task 601 executing for 20ms
+[20ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 601
+[422ms] [CONCURRENCY] [RELEASE] Task 601 released Aisle 1
+Memory for Task 601 deallocated (40 units freed)
+[422ms] [MEMORY] [DEALLOCATE] Task 601 deallocated memory
+[405ms] [TASK_TERMINATE] Task 601 completed for user User1 (Wait: 327ms, Turnaround: 349ms)
+[423ms] [TASK] [COMPLETE] Task 601 completed (Wait: 327ms, Turnaround: 349ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 26/16, AvgWait: -410145574514.73ms]
+Pending Tasks: 0
+Session Duration: 375ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 25/17, AvgWait: -639827096391.16ms]
+Pending Tasks: 0
+Session Duration: 363ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 21/14, AvgWait: -592432496649.62ms]
+Pending Tasks: 0
+Session Duration: 363ms
+User[ID=4, Name=User4, Status=ACTIVE, Tasks: 18/10, AvgWait: -197477498758.06ms]
+Pending Tasks: 0
+Session Duration: 361ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 90
+Average Wait Time: -459970666578.39ms
+Average Turnaround: 234.42ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 135 units
+Free Memory: 365 units
+Fragmentation: 3 free blocks. Total free space: 365 / 500
+Fragmentation: 73.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 4
+Total Tasks: 90
+Total Events Logged: 118
+Simulation Duration: 451ms
+
+=====================================
+[435ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

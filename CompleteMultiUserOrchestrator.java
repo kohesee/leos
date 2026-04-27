@@ -12,6 +12,7 @@ import concurrency.WaitingQueue;
 import io.PathOptimizer;
 import io.RobotSimulator;
 import simulation.EventLogger;
+import simulation.OutputManager;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -77,7 +78,7 @@ public class CompleteMultiUserOrchestrator {
      * Initialize ALL OS components (Phase 1 features)
      */
     private void initializeComponents() {
-        eventLogger.log("ORCHESTRATOR", "INIT", "Initializing PHASE 2 COMPLETE - All OS components...");
+        eventLogger.log("ORCHESTRATOR", "INIT", "Initializing warehouse OS simulation - All OS components...");
 
         // Kernel (multi-user enabled)
         this.kernel = new MultiThreadedKernel();
@@ -311,10 +312,10 @@ public class CompleteMultiUserOrchestrator {
      */
     public void runSimulation(String csvPath) {
         try {
-            System.out.println("╔══════════════════════════════════════════════════════════╗");
-            System.out.println("║   PHASE 2 COMPLETE: MULTI-USER + FULL OS FEATURES        ║");
-            System.out.println("║   Single CSV, Multi-User, All Phase 1 Features           ║");
-            System.out.println("╚══════════════════════════════════════════════════════════╝\n");
+            System.out.println("============================================================");
+            System.out.println("WAREHOUSE OS: MULTI-USER + FULL OS FEATURES");
+            System.out.println("Single CSV, Multi-User, Unified Feature Set");
+            System.out.println("============================================================\n");
 
             // Phase 1: Load
             loadTasksFromCSV(csvPath);
@@ -344,7 +345,7 @@ public class CompleteMultiUserOrchestrator {
      */
     private void generateCompleteStatistics() {
         System.out.println("============================================================");
-        System.out.println("PHASE 2 COMPLETE STATISTICS - MULTI-USER FULL OS");
+        System.out.println("SIMULATION STATISTICS - MULTI-USER FULL OS");
         System.out.println("============================================================\n");
 
         // Per-User Statistics
@@ -401,13 +402,11 @@ public class CompleteMultiUserOrchestrator {
             (System.currentTimeMillis() - simulationStartTime) + "ms");
         System.out.println("=====================================\n");
 
-        System.out.println("============================================================");
-        System.out.println("PHASE 2 COMPLETE - ALL FEATURES INTEGRATED SUCCESSFULLY");
-        System.out.println("============================================================");
     }
 
     public static void main(String[] args) {
         String csvPath = args.length > 0 ? args[0] : "multi_user_tasks.csv";
+        OutputManager.install("warehouse_os");
         
         CompleteMultiUserOrchestrator orchestrator = new CompleteMultiUserOrchestrator();
         try {
@@ -415,6 +414,8 @@ public class CompleteMultiUserOrchestrator {
         } catch (Exception e) {
             System.err.println("Fatal error: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            OutputManager.shutdown();
         }
     }
 }

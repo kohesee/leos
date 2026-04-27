@@ -1,0 +1,165 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192357.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[53ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[56ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[42ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[66ms] [USER] [LOGIN] User User1 logged in
+[51ms] [TASK_CREATE] Task 701 created for user User1 (Priority: 1)
+[53ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[75ms] [USER] [LOGIN] User User2 logged in
+[54ms] [TASK_CREATE] Task 702 created for user User2 (Priority: 1)
+[54ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[76ms] [USER] [LOGIN] User User3 logged in
+[55ms] [TASK_CREATE] Task 703 created for user User3 (Priority: 2)
+[55ms] [USER_LOGIN] User User4 (ID: 4) logged in
+[77ms] [USER] [LOGIN] User User4 logged in
+[55ms] [TASK_CREATE] Task 704 created for user User4 (Priority: 2)
+[80ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 4 tasks for 4 users
+
+[80ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 701 allocated 130 units at Floor Index 0-129 (Best Fit)
+[91ms] [MEMORY] [ALLOCATE] Task 701 (User: User1) allocated 130 units at address 0
+Task 702 allocated 120 units at Floor Index 130-249 (Best Fit)
+[92ms] [MEMORY] [ALLOCATE] Task 702 (User: User2) allocated 120 units at address 130
+Task 703 allocated 125 units at Floor Index 250-374 (Best Fit)
+[92ms] [MEMORY] [ALLOCATE] Task 703 (User: User3) allocated 125 units at address 250
+Task 704 allocated 120 units at Floor Index 375-494 (Best Fit)
+[93ms] [MEMORY] [ALLOCATE] Task 704 (User: User4) allocated 120 units at address 375
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[93ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[100ms] [SCHEDULER] [SELECT] Task 702 selected (Priority: 1)
+[100ms] [SCHEDULER] [SELECT] Task 701 selected (Priority: 1)
+[100ms] [SCHEDULER] [SELECT] Task 704 selected (Priority: 2)
+[100ms] [SCHEDULER] [SELECT] Task 703 selected (Priority: 2)
+[102ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 704
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 701
+[101ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 702
+[103ms] [TASK] [AISLE_REQUEST] Task 701 requesting Aisle 1
+[102ms] [TASK] [AISLE_REQUEST] Task 704 requesting Aisle 7
+[102ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 703
+[103ms] [TASK] [AISLE_REQUEST] Task 703 requesting Aisle 5
+[103ms] [TASK] [AISLE_REQUEST] Task 702 requesting Aisle 3
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 702 on Aisle 3...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 704 on Aisle 7...
+[2ms] CONCURRENCY: SAFE STATE - Aisle 7 is available for Task 704
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 701 on Aisle 1...
+[1ms] CONCURRENCY: SAFE STATE - Aisle 3 is available for Task 702
+[0ms] CONCURRENCY: Task 704 requesting Aisle 7
+[4ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 701
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 703 on Aisle 5...
+[0ms] CONCURRENCY: Task 701 requesting Aisle 1
+[1ms] CONCURRENCY: Aisle 7 Semaphore ACQUIRED by Task 704
+[0ms] CONCURRENCY: Task 702 requesting Aisle 3
+[111ms] [CONCURRENCY] [ACQUIRE] Task 704 acquired Aisle 7 semaphore
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 701
+[7ms] CONCURRENCY: SAFE STATE - Aisle 5 is available for Task 703
+[112ms] [CONCURRENCY] [ACQUIRE] Task 701 acquired Aisle 1 semaphore
+[1ms] CONCURRENCY: Aisle 3 Semaphore ACQUIRED by Task 702
+[0ms] CONCURRENCY: Task 703 requesting Aisle 5
+[1ms] CONCURRENCY: Aisle 5 Semaphore ACQUIRED by Task 703
+[114ms] [CONCURRENCY] [ACQUIRE] Task 703 acquired Aisle 5 semaphore
+[113ms] [CONCURRENCY] [ACQUIRE] Task 702 acquired Aisle 3 semaphore
+[119ms] [DISK] [PATH] Task 701 using TIE algorithm
+[119ms] [DISK] [PATH] Task 702 using TIE algorithm
+[119ms] [DISK] [EXECUTE] Task 701 executed disk I/O - seek distance: 50
+[119ms] [DISK] [PATH] Task 703 using TIE algorithm
+[120ms] [MEMORY] [LRU_ACCESS] Task 701 LRU updated
+[120ms] [DISK] [EXECUTE] Task 702 executed disk I/O - seek distance: 50
+[121ms] [MEMORY] [LRU_ACCESS] Task 702 LRU updated
+[120ms] [DISK] [PATH] Task 704 using TIE algorithm
+[120ms] [DISK] [EXECUTE] Task 703 executed disk I/O - seek distance: 50
+[121ms] [DISK] [EXECUTE] Task 704 executed disk I/O - seek distance: 50
+[122ms] [MEMORY] [LRU_ACCESS] Task 703 LRU updated
+[122ms] [MEMORY] [LRU_ACCESS] Task 704 LRU updated
+[132ms] [TASK] [EXECUTE] Task 701 executing for 10ms
+[2ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 701
+[133ms] [CONCURRENCY] [RELEASE] Task 701 released Aisle 1
+Memory for Task 701 deallocated (130 units freed)
+[133ms] [MEMORY] [DEALLOCATE] Task 701 deallocated memory
+[134ms] [TASK] [EXECUTE] Task 702 executing for 11ms
+[2ms] CONCURRENCY: Aisle 3 Semaphore RELEASED by Task 702
+[135ms] [CONCURRENCY] [RELEASE] Task 702 released Aisle 3
+Memory for Task 702 deallocated (120 units freed)
+[135ms] [MEMORY] [DEALLOCATE] Task 702 deallocated memory
+[134ms] [TASK] [EXECUTE] Task 704 executing for 9ms
+[135ms] [TASK] [EXECUTE] Task 703 executing for 12ms
+[2ms] CONCURRENCY: Aisle 5 Semaphore RELEASED by Task 703
+[137ms] [CONCURRENCY] [RELEASE] Task 703 released Aisle 5
+Memory for Task 703 deallocated (125 units freed)
+[2ms] CONCURRENCY: Aisle 7 Semaphore RELEASED by Task 704
+[138ms] [MEMORY] [DEALLOCATE] Task 703 deallocated memory
+[138ms] [CONCURRENCY] [RELEASE] Task 704 released Aisle 7
+Memory for Task 704 deallocated (120 units freed)
+[139ms] [MEMORY] [DEALLOCATE] Task 704 deallocated memory
+[118ms] [TASK_TERMINATE] Task 702 completed for user User2 (Wait: 35ms, Turnaround: 61ms)
+[118ms] [TASK_TERMINATE] Task 703 completed for user User3 (Wait: 35ms, Turnaround: 61ms)
+[118ms] [TASK_TERMINATE] Task 704 completed for user User4 (Wait: 32ms, Turnaround: 62ms)
+[118ms] [TASK_TERMINATE] Task 701 completed for user User1 (Wait: 45ms, Turnaround: 68ms)
+[146ms] [TASK] [COMPLETE] Task 701 completed (Wait: 45ms, Turnaround: 68ms)
+[146ms] [TASK] [COMPLETE] Task 703 completed (Wait: 35ms, Turnaround: 61ms)
+[147ms] [TASK] [COMPLETE] Task 702 completed (Wait: 35ms, Turnaround: 61ms)
+[146ms] [TASK] [COMPLETE] Task 704 completed (Wait: 32ms, Turnaround: 62ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 2/1, AvgWait: 45.00ms]
+Pending Tasks: 0
+Session Duration: 92ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 2/1, AvgWait: 35.00ms]
+Pending Tasks: 0
+Session Duration: 78ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 2/1, AvgWait: 35.00ms]
+Pending Tasks: 0
+Session Duration: 78ms
+User[ID=4, Name=User4, Status=ACTIVE, Tasks: 2/1, AvgWait: 32.00ms]
+Pending Tasks: 0
+Session Duration: 77ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 8
+Average Wait Time: 36.75ms
+Average Turnaround: 63.00ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 4
+Total Tasks: 8
+Total Events Logged: 12
+Simulation Duration: 179ms
+
+=====================================
+[158ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

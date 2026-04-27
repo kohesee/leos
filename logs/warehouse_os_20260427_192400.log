@@ -1,0 +1,155 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192400.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[39ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[40ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[30ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[48ms] [USER] [LOGIN] User User1 logged in
+[35ms] [TASK_CREATE] Task 1401 created for user User1 (Priority: 1)
+[37ms] [TASK_CREATE] Task 1402 created for user User1 (Priority: 1)
+[37ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[55ms] [USER] [LOGIN] User User2 logged in
+[38ms] [TASK_CREATE] Task 1403 created for user User2 (Priority: 1)
+[39ms] [TASK_CREATE] Task 1404 created for user User2 (Priority: 1)
+[58ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 4 tasks for 2 users
+
+[59ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 1401 allocated 40 units at Floor Index 0-39 (Best Fit)
+[71ms] [MEMORY] [ALLOCATE] Task 1401 (User: User1) allocated 40 units at address 0
+Task 1402 allocated 35 units at Floor Index 40-74 (Best Fit)
+[71ms] [MEMORY] [ALLOCATE] Task 1402 (User: User1) allocated 35 units at address 40
+Task 1403 allocated 40 units at Floor Index 75-114 (Best Fit)
+[73ms] [MEMORY] [ALLOCATE] Task 1403 (User: User2) allocated 40 units at address 75
+Task 1404 allocated 35 units at Floor Index 115-149 (Best Fit)
+[73ms] [MEMORY] [ALLOCATE] Task 1404 (User: User2) allocated 35 units at address 115
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[73ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[77ms] [SCHEDULER] [SELECT] Task 1401 selected (Priority: 1)
+[77ms] [SCHEDULER] [SELECT] Task 1404 selected (Priority: 1)
+[77ms] [SCHEDULER] [SELECT] Task 1403 selected (Priority: 1)
+[77ms] [SCHEDULER] [SELECT] Task 1402 selected (Priority: 1)
+[78ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1403
+[78ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1404
+[78ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1401
+[79ms] [TASK] [AISLE_REQUEST] Task 1404 requesting Aisle 2
+[79ms] [TASK] [AISLE_REQUEST] Task 1403 requesting Aisle 1
+[79ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 1402
+[79ms] [TASK] [AISLE_REQUEST] Task 1401 requesting Aisle 1
+[80ms] [TASK] [AISLE_REQUEST] Task 1402 requesting Aisle 2
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1404 on Aisle 2...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1402 on Aisle 2...
+[2ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 1402
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1403 on Aisle 1...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 1401 on Aisle 1...
+[0ms] CONCURRENCY: Task 1402 requesting Aisle 2
+[4ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1403
+[0ms] CONCURRENCY: Task 1403 requesting Aisle 1
+[1ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1403
+[1ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 1404
+[1ms] CONCURRENCY: Task 1404 requesting Aisle 2
+[89ms] [CONCURRENCY] [ACQUIRE] Task 1403 acquired Aisle 1 semaphore
+[1ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 1402
+[5ms] CONCURRENCY: SAFE STATE - Aisle 1 is available for Task 1401
+[2ms] CONCURRENCY: Task 1401 requesting Aisle 1
+[90ms] [CONCURRENCY] [ACQUIRE] Task 1402 acquired Aisle 2 semaphore
+[93ms] [DISK] [PATH] Task 1402 using TIE algorithm
+[93ms] [DISK] [PATH] Task 1403 using TIE algorithm
+[93ms] [DISK] [EXECUTE] Task 1402 executed disk I/O - seek distance: 50
+[94ms] [DISK] [EXECUTE] Task 1403 executed disk I/O - seek distance: 50
+[94ms] [MEMORY] [LRU_ACCESS] Task 1402 LRU updated
+[94ms] [MEMORY] [LRU_ACCESS] Task 1403 LRU updated
+[106ms] [TASK] [EXECUTE] Task 1402 executing for 10ms
+[3ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 1402
+[3ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 1404
+[107ms] [CONCURRENCY] [RELEASE] Task 1402 released Aisle 2
+[107ms] [CONCURRENCY] [ACQUIRE] Task 1404 acquired Aisle 2 semaphore
+Memory for Task 1402 deallocated (35 units freed)
+[107ms] [DISK] [PATH] Task 1404 using TIE algorithm
+[108ms] [TASK] [EXECUTE] Task 1403 executing for 12ms
+[108ms] [DISK] [EXECUTE] Task 1404 executed disk I/O - seek distance: 50
+[108ms] [MEMORY] [DEALLOCATE] Task 1402 deallocated memory
+[108ms] [MEMORY] [LRU_ACCESS] Task 1404 LRU updated
+[3ms] CONCURRENCY: Aisle 1 Semaphore ACQUIRED by Task 1401
+[3ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1403
+[108ms] [CONCURRENCY] [ACQUIRE] Task 1401 acquired Aisle 1 semaphore
+[109ms] [CONCURRENCY] [RELEASE] Task 1403 released Aisle 1
+[109ms] [DISK] [PATH] Task 1401 using TIE algorithm
+Memory for Task 1403 deallocated (40 units freed)
+[109ms] [DISK] [EXECUTE] Task 1401 executed disk I/O - seek distance: 50
+[110ms] [MEMORY] [DEALLOCATE] Task 1403 deallocated memory
+[110ms] [MEMORY] [LRU_ACCESS] Task 1401 LRU updated
+[96ms] [TASK_TERMINATE] Task 1402 completed for user User1 (Wait: 34ms, Turnaround: 54ms)
+[96ms] [TASK_TERMINATE] Task 1403 completed for user User2 (Wait: 34ms, Turnaround: 55ms)
+[118ms] [TASK] [COMPLETE] Task 1403 completed (Wait: 34ms, Turnaround: 55ms)
+[118ms] [TASK] [COMPLETE] Task 1402 completed (Wait: 34ms, Turnaround: 54ms)
+[120ms] [TASK] [EXECUTE] Task 1404 executing for 9ms
+[5ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 1404
+[120ms] [CONCURRENCY] [RELEASE] Task 1404 released Aisle 2
+Memory for Task 1404 deallocated (35 units freed)
+[121ms] [MEMORY] [DEALLOCATE] Task 1404 deallocated memory
+[104ms] [TASK_TERMINATE] Task 1404 completed for user User2 (Wait: 33ms, Turnaround: 65ms)
+[121ms] [TASK] [COMPLETE] Task 1404 completed (Wait: 33ms, Turnaround: 65ms)
+[123ms] [TASK] [EXECUTE] Task 1401 executing for 11ms
+[5ms] CONCURRENCY: Aisle 1 Semaphore RELEASED by Task 1401
+[123ms] [CONCURRENCY] [RELEASE] Task 1401 released Aisle 1
+Memory for Task 1401 deallocated (40 units freed)
+[123ms] [MEMORY] [DEALLOCATE] Task 1401 deallocated memory
+[108ms] [TASK_TERMINATE] Task 1401 completed for user User1 (Wait: 43ms, Turnaround: 75ms)
+[125ms] [TASK] [COMPLETE] Task 1401 completed (Wait: 43ms, Turnaround: 75ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 4/2, AvgWait: 38.50ms]
+Pending Tasks: 0
+Session Duration: 82ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 4/2, AvgWait: 33.50ms]
+Pending Tasks: 0
+Session Duration: 75ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 8
+Average Wait Time: 36.00ms
+Average Turnaround: 62.25ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 2
+Total Tasks: 8
+Total Events Logged: 10
+Simulation Duration: 147ms
+
+=====================================
+[131ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated

@@ -57,19 +57,19 @@ public class BankersAlgorithm {
         int taskID = t.getTaskID();
         log("Banker's Algorithm checking for Task " + taskID + " on Aisle " + aisle + "...");
 
-        // Aisle is free — safe to proceed
+        // Aisle is free - safe to proceed
         if (!aisles[aisle].isLocked()) {
-            log("SAFE STATE — Aisle " + aisle + " is available for Task " + taskID);
+            log("SAFE STATE - Aisle " + aisle + " is available for Task " + taskID);
             return true;
         }
 
-        // Aisle is locked — check for circular wait
+        // Aisle is locked - check for circular wait
         if (checkDeadlock(t)) {
-            log("UNSAFE STATE — Deadlock risk detected for Task " + taskID);
+            log("UNSAFE STATE - Deadlock risk detected for Task " + taskID);
             return false;
         }
 
-        log("Aisle " + aisle + " locked, but no circular wait — Task " + taskID + " may wait");
+        log("Aisle " + aisle + " locked, but no circular wait - Task " + taskID + " may wait");
         return false; // locked, but safe to wait (WaitingQueue will handle it)
     }
 
@@ -110,7 +110,7 @@ public class BankersAlgorithm {
         int aisle  = t.getTargetAisle();
 
         if (checkDeadlock(t)) {
-            log("DEADLOCK PREVENTED — Task " + taskID + " denied access to Aisle " + aisle);
+            log("DEADLOCK PREVENTED - Task " + taskID + " denied access to Aisle " + aisle);
             return false;
         }
         return true;

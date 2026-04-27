@@ -1,0 +1,139 @@
+[OUTPUT] Log file: D:\Study\college\SEM4\OS\project\leos\logs\warehouse_os_20260427_192439.log
+[0ms] [ORCHESTRATOR] [INIT] Initializing warehouse OS simulation - All OS components...
+[46ms] [ORCHESTRATOR] [INIT] All components initialized successfully
+
+============================================================
+WAREHOUSE OS: MULTI-USER + FULL OS FEATURES
+Single CSV, Multi-User, Unified Feature Set
+
+============================================================
+
+[48ms] [ORCHESTRATOR] [LOAD] Loading tasks from multi_user_tasks.csv
+[35ms] [USER_LOGIN] User User1 (ID: 1) logged in
+[57ms] [USER] [LOGIN] User User1 logged in
+[42ms] [TASK_CREATE] Task 201 created for user User1 (Priority: 1)
+[44ms] [USER_LOGIN] User User2 (ID: 2) logged in
+[65ms] [USER] [LOGIN] User User2 logged in
+[45ms] [TASK_CREATE] Task 202 created for user User2 (Priority: 1)
+[45ms] [USER_LOGIN] User User3 (ID: 3) logged in
+[66ms] [USER] [LOGIN] User User3 logged in
+[46ms] [TASK_CREATE] Task 203 created for user User3 (Priority: 2)
+[69ms] [ORCHESTRATOR] [LOAD_COMPLETE] Loaded 3 tasks for 3 users
+
+[69ms] [ORCHESTRATOR] [SETUP] Setting up tasks - Allocating memory and scheduling
+Task 201 allocated 40 units at Floor Index 0-39 (Best Fit)
+[82ms] [MEMORY] [ALLOCATE] Task 201 (User: User1) allocated 40 units at address 0
+Task 202 allocated 45 units at Floor Index 40-84 (Best Fit)
+[83ms] [MEMORY] [ALLOCATE] Task 202 (User: User2) allocated 45 units at address 40
+Task 203 allocated 35 units at Floor Index 85-119 (Best Fit)
+[83ms] [MEMORY] [ALLOCATE] Task 203 (User: User3) allocated 35 units at address 85
+
+--- CONCURRENT MULTI-USER EXECUTION ---
+
+[83ms] [ORCHESTRATOR] [EXEC] Starting concurrent multi-user task execution
+[90ms] [SCHEDULER] [SELECT] Task 201 selected (Priority: 1)
+[90ms] [SCHEDULER] [SELECT] Task 203 selected (Priority: 2)
+[90ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 203
+[90ms] [SCHEDULER] [SELECT] Task 202 selected (Priority: 1)
+[91ms] [TASK] [AISLE_REQUEST] Task 203 requesting Aisle 2
+[90ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 201
+[91ms] [SCHEDULER] [CTX_SWITCH] Context switch to Task 202
+[91ms] [TASK] [AISLE_REQUEST] Task 201 requesting Aisle 2
+[92ms] [TASK] [AISLE_REQUEST] Task 202 requesting Aisle 2
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 201 on Aisle 2...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 202 on Aisle 2...
+[0ms] CONCURRENCY: Banker's Algorithm checking for Task 203 on Aisle 2...
+[3ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 203
+[2ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 202
+[1ms] CONCURRENCY: SAFE STATE - Aisle 2 is available for Task 201
+[0ms] CONCURRENCY: Task 203 requesting Aisle 2
+[0ms] CONCURRENCY: Task 202 requesting Aisle 2
+[1ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 203
+[0ms] CONCURRENCY: Task 201 requesting Aisle 2
+[102ms] [CONCURRENCY] [ACQUIRE] Task 203 acquired Aisle 2 semaphore
+[106ms] [DISK] [PATH] Task 203 using TIE algorithm
+[107ms] [DISK] [EXECUTE] Task 203 executed disk I/O - seek distance: 50
+[107ms] [MEMORY] [LRU_ACCESS] Task 203 LRU updated
+[118ms] [TASK] [EXECUTE] Task 203 executing for 9ms
+[4ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 202
+[4ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 203
+[119ms] [CONCURRENCY] [ACQUIRE] Task 202 acquired Aisle 2 semaphore
+[119ms] [CONCURRENCY] [RELEASE] Task 203 released Aisle 2
+[119ms] [DISK] [PATH] Task 202 using TIE algorithm
+Memory for Task 203 deallocated (35 units freed)
+[120ms] [DISK] [EXECUTE] Task 202 executed disk I/O - seek distance: 50
+[120ms] [MEMORY] [DEALLOCATE] Task 203 deallocated memory
+[120ms] [MEMORY] [LRU_ACCESS] Task 202 LRU updated
+[105ms] [TASK_TERMINATE] Task 203 completed for user User3 (Wait: 32ms, Turnaround: 54ms)
+[130ms] [TASK] [COMPLETE] Task 203 completed (Wait: 32ms, Turnaround: 54ms)
+[133ms] [TASK] [EXECUTE] Task 202 executing for 10ms
+[6ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 202
+[6ms] CONCURRENCY: Aisle 2 Semaphore ACQUIRED by Task 201
+[133ms] [CONCURRENCY] [RELEASE] Task 202 released Aisle 2
+[133ms] [CONCURRENCY] [ACQUIRE] Task 201 acquired Aisle 2 semaphore
+Memory for Task 202 deallocated (45 units freed)
+[134ms] [DISK] [PATH] Task 201 using TIE algorithm
+[134ms] [MEMORY] [DEALLOCATE] Task 202 deallocated memory
+[114ms] [TASK_TERMINATE] Task 202 completed for user User2 (Wait: 33ms, Turnaround: 68ms)
+[135ms] [TASK] [COMPLETE] Task 202 completed (Wait: 33ms, Turnaround: 68ms)
+[134ms] [DISK] [EXECUTE] Task 201 executed disk I/O - seek distance: 50
+[135ms] [MEMORY] [LRU_ACCESS] Task 201 LRU updated
+[149ms] [TASK] [EXECUTE] Task 201 executing for 12ms
+[8ms] CONCURRENCY: Aisle 2 Semaphore RELEASED by Task 201
+[149ms] [CONCURRENCY] [RELEASE] Task 201 released Aisle 2
+Memory for Task 201 deallocated (40 units freed)
+[149ms] [MEMORY] [DEALLOCATE] Task 201 deallocated memory
+[129ms] [TASK_TERMINATE] Task 201 completed for user User1 (Wait: 44ms, Turnaround: 93ms)
+[150ms] [TASK] [COMPLETE] Task 201 completed (Wait: 44ms, Turnaround: 93ms)
+
+--- SIMULATION COMPLETE ---
+
+============================================================
+
+SIMULATION STATISTICS - MULTI-USER FULL OS
+
+============================================================
+
+========== PER-USER STATISTICS ==========
+User[ID=1, Name=User1, Status=ACTIVE, Tasks: 2/1, AvgWait: 44.00ms]
+Pending Tasks: 0
+Session Duration: 101ms
+User[ID=2, Name=User2, Status=ACTIVE, Tasks: 2/1, AvgWait: 33.00ms]
+Pending Tasks: 0
+Session Duration: 90ms
+User[ID=3, Name=User3, Status=ACTIVE, Tasks: 2/1, AvgWait: 32.00ms]
+Pending Tasks: 0
+Session Duration: 90ms
+
+=====================================
+
+========== SCHEDULER STATISTICS ==========
+Total Tasks Completed: 6
+Average Wait Time: 36.33ms
+Average Turnaround: 71.67ms
+
+==========================================
+
+========== MEMORY STATISTICS ==========
+Total Memory: 500 units
+Used Memory: 0 units
+Free Memory: 500 units
+Fragmentation: 1 free blocks. Total free space: 500 / 500
+Fragmentation: 100.00%
+
+=====================================
+
+========== CONCURRENCY STATISTICS ==========
+Aisles Available: 10
+Deadlocks Prevented: 0
+
+==========================================
+
+========== SYSTEM STATISTICS ==========
+Total Users: 3
+Total Tasks: 6
+Total Events Logged: 9
+Simulation Duration: 179ms
+
+=====================================
+[159ms] [KERNEL_SHUTDOWN] Kernel shutdown initiated
