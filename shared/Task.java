@@ -2,6 +2,8 @@ package shared;
 
 public class Task {
     private int taskID;
+    private int userID;
+    private String username;
     private int priority;
     private String state;
     private int targetAisle;
@@ -19,7 +21,13 @@ public class Task {
     private static final String[] VALID_STATES = {"NEW", "READY", "RUNNING", "WAITING", "TERMINATED"};
 
     public Task(int taskID, int priority, int targetAisle, int memorySize, int processTime) {
+        this(taskID, -1, "SYSTEM", priority, targetAisle, memorySize, processTime);
+    }
+
+    public Task(int taskID, int userID, String username, int priority, int targetAisle, int memorySize, int processTime) {
         this.taskID = taskID;
+        this.userID = userID;
+        this.username = username;
         this.priority = priority;
         this.targetAisle = targetAisle;
         this.memorySize = memorySize;
@@ -39,6 +47,14 @@ public class Task {
 
     public int getTaskId() {
         return taskID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public int getPriority() {
